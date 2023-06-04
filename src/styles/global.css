@@ -1,15 +1,41 @@
+:root {
+  --background-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 27%);
+  --heading-color: hsl(0, 0%, 13%);
+  --link-color: hsl(217, 71%, 53%);
+
+  --code-background-color: hsl(0, 0%, 95%);
+  --quote-text-color: hsl(0, 0%, 13%);
+
+  --spacing: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: hsl(0, 0%, 0%);
+    --text-color: hsl(0, 0%, 73%);
+    --heading-color: hsl(0, 0%, 83%);
+    --link-color: hsl(217, 71%, 47%);
+
+    --code-background-color: hsl(0, 0%, 5%);
+    --quote-text-color: hsl(0, 0%, 87%);
+  }
+}
+
 body {
-  font-family: Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin: auto;
   padding: 20px;
   max-width: 65ch;
   text-align: left;
-  background-color: #fff;
+  background-color: var(--background-color);
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
-  color: #444;
+  color: var(--text-color);
 }
+
 h1,
 h2,
 h3,
@@ -18,44 +44,55 @@ h5,
 h6,
 strong,
 b {
-  color: #222;
+  color: var(--heading-color);
 }
+
 a {
-  color: #3273dc;
+  color: var(--link-color);
 }
+
 nav a {
-  margin-right: 10px;
+  margin-right: var(--spacing);
 }
+
 textarea {
   width: 100%;
-  font-size: 16px;
+  font-size: 1em;
 }
+
 input {
-  font-size: 16px;
+  font-size: 1em;
 }
+
 content {
   line-height: 1.6;
 }
+
 table {
   width: 100%;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 code {
   padding: 2px 5px;
-  background-color: #f2f2f2;
+  background-color: var(--code-background-color);
 }
+
 pre {
-  padding: 1rem;
+  padding: var(--spacing);
 }
+
 pre > code {
   all: unset;
 }
+
 blockquote {
-  border: 1px solid #999;
-  color: #222;
+  border-left: 1px solid #777777;
+  color: var(--quote-text-color);
   padding: 2px 0px 2px 20px;
   margin: 0px;
   font-style: italic;
