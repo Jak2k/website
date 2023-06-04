@@ -1,0 +1,18 @@
+---
+import { getEntryBySlug } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+const post = await getEntryBySlug("blog", Astro.params.slug || "");
+
+const { Content } = (await post?.render()) || { Content: null };
+---
+
+<BlogPost
+	{...post?.data || {
+		description: "SOrry, this post does not exist",
+		title: "404 - Not Found",
+		pubDate: new Date(),
+	}}
+>
+	{Content && <Content />}
+</BlogPost>
