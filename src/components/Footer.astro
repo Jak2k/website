@@ -8,7 +8,7 @@ const today = new Date();
 		<a href="https://github.com/jak2k" target="_blank">GitHub</a>
 		<a href="https://matrix.to/#/@jak2k:matrix.org">Matrix</a>
 	</div>
-	<div>I ❤️ Open Source & Privacy</div>
+	<div id="ilove">I <span id="heart">love</span> Open Source & Privacy</div>
 	<div>
 		<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"
 			><img
@@ -31,6 +31,42 @@ const today = new Date();
 			justify-content: center;
 			text-align: center;
 			gap: 1em;
+		}
+
+		#ilove {
+			display: flex;
+			align-items: center;
+			gap: 0.5em;
+			flex-direction: row;
+		}
+
+		/* Pulsation animation */
+		#heart {
+			height: 1rem;
+			width: 1rem;
+			display: flex;
+			color: var(--background-color);
+		}
+
+		#heart::before {
+			content: "❤";
+			animation: pulse 1s infinite;
+			height: 1rem;
+			width: 1rem;
+			color: red;
+			transform: translateY(-0.2rem);
+		}
+
+		@keyframes pulse {
+			0% {
+				font-size: 1em;
+			}
+			50% {
+				font-size: 1.2em;
+			}
+			100% {
+				font-size: 1em;
+			}
 		}
 	</style>
 </footer>
