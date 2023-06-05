@@ -8,6 +8,14 @@
   --quote-text-color: hsl(0, 0%, 13%);
 
   --spacing: 1rem;
+
+  --fancy-gradient-lightness: 50%;
+  --fancy-gradient: linear-gradient(
+    90deg,
+    hsl(133, 71%, var(--fancy-gradient-lightness)) 0%,
+    hsl(192, 71%, var(--fancy-gradient-lightness)) 50%,
+    hsl(217, 71%, var(--fancy-gradient-lightness)) 100%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +27,8 @@
 
     --code-background-color: hsl(0, 0%, 5%);
     --quote-text-color: hsl(0, 0%, 87%);
+
+    --fancy-gradient-lightness: 70%;
   }
 }
 
@@ -45,6 +55,16 @@ h6,
 strong,
 b {
   color: var(--heading-color);
+}
+
+h1 {
+  width: max-content;
+
+  background: var(--fancy-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 a {
