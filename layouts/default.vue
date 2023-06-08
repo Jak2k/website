@@ -5,6 +5,10 @@ const routes: { path: string; name: string }[] = [
     path: "/",
   },
   {
+    name: "Posts",
+    path: "/posts",
+  },
+  {
     name: "Me",
     path: "/me",
   },
@@ -12,14 +16,14 @@ const routes: { path: string; name: string }[] = [
 </script>
 <template>
   <div
-    class="fixed top-0 h-screen w-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100"
+    class="fixed top-0 h-screen w-screen bg-slate-100 text-slate-900 dark:bg-slate-900 dark:text-slate-100"
   >
-    <nav class="m-2 flex gap-1 rounded-full bg-gray-300 p-1 dark:bg-gray-700">
+    <nav class="m-2 flex gap-1 rounded-full bg-slate-300 p-1 dark:bg-slate-700">
       <NuxtLink
         v-for="route in routes"
         :key="route.path"
         :to="route.path"
-        class="rounded-full p-2 hover:bg-gray-50 dark:hover:bg-gray-950"
+        class="rounded-full p-2 hover:bg-slate-50 dark:hover:bg-slate-950"
         >{{ route.name }}</NuxtLink
       >
     </nav>
@@ -38,10 +42,10 @@ const routes: { path: string; name: string }[] = [
 }
 
 .page-enter-from {
-  transform: trangrayX(100%);
+  transform: translateX(100%);
 }
 
 .page-leave-to {
-  transform: trangrayX(-100%);
+  transform: translateX(-100%);
 }
 </style>

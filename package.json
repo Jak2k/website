@@ -11,7 +11,6 @@
   "devDependencies": {
     "@nuxt/content": "^2.6.0",
     "@nuxt/devtools": "latest",
-    "@nuxthq/ui": "^2.3.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/google-fonts": "^3.0.1",

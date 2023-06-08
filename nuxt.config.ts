@@ -1,12 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    "@nuxtjs/tailwindcss",
     "@nuxt/content",
     "@unlighthouse/nuxt",
     "@nuxtjs/eslint-module",
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
-    "@nuxthq/ui",
   ],
   devtools: {
     enabled: true,
@@ -35,9 +35,5 @@ export default defineNuxtConfig({
       name: "page",
       mode: "out-in",
     },
-  },
-  colorMode: {
-    preference: "system",
-    fallback: "dark",
   },
 });
