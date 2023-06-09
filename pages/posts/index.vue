@@ -9,7 +9,7 @@ const posts = await useBlog();
       v-for="post in posts"
       :key="post._path"
       :to="`/posts${post._path}`"
-      class="m-1 block border-l-2 p-1"
+      class="m-1 block border-l-2 border-green-500 p-1"
     >
       <h2 class="text-2xl">{{ post.title }}</h2>
       <p>{{ post.description }}</p>

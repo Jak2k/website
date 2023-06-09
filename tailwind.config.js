@@ -8,4 +8,5 @@ module.exports = {
       mono: ["Fira Code", ...defaultTheme.fontFamily.mono],
     },
   },
+  plugins: [require("@tailwindcss/typography")],
 };
