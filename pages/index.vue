@@ -1,14 +1,24 @@
 <script setup lang="ts">
-const route = useRoute();
+const posts = await useBlog(3);
 </script>
 
 <template>
-  <div>
-    <h1>Nuxt Routing set up successfully!</h1>
-    <p>Current route: {{ route.path }}</p>
-    <a href="https://nuxt.com/docs/getting-started/routing" target="_blank"
-      >Learn more about Nuxt Routing</a
+  <div class="m-5 mx-auto w-max min-w-[20vw]">
+    <h1 class="text-9xl">Jak2k</h1>
+    <h2 class="text-3xl">Latest Posts</h2>
+    <NuxtLink
+      v-for="post in posts"
+      :key="post._path"
+      :to="`/posts${post._path}`"
+      class="m-1 block border-l-2 p-1"
     >
-    <UButton label="Hi" />
+      <h2 class="text-2xl">{{ post.title }}</h2>
+      <p>{{ post.description }}</p>
+    </NuxtLink>
+    <NuxtLink
+      to="/posts"
+      class="underline decoration-dashed underline-offset-2 hover:decoration-solid"
+      ><Icon name="line-md:chevron-small-right" />More</NuxtLink
+    >
   </div>
 </template>

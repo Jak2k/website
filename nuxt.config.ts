@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@nuxtjs/eslint-module",
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
+    "nuxt-icon",
   ],
   devtools: {
     enabled: true,

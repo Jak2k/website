@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const { data: posts } = await useAsyncData("posts", () =>
-  queryContent().find()
-);
+const posts = await useBlog();
 </script>
 
 <template>
