@@ -67,16 +67,17 @@ const routes: { path: string; name: string }[] = [
 
 .page-enter-from,
 .page-leave-to {
-  opacity: 0;
-  filter: blur(0.2em);
+  filter: blur(0.5em);
 }
 
 .page-enter-from {
-  transform: translateX(100%) scale(0.5) rotate(10deg);
+  transform: translateX(50%);
+  opacity: 0;
 }
 
 .page-leave-to {
-  transform: translateX(-100%) scale(0.5) rotate(-10deg);
+  transform: translateX(-50%);
+  opacity: 0;
 }
 
 html,
