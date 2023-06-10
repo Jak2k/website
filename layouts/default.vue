@@ -15,7 +15,9 @@ const routes: { path: string; name: string }[] = [
 ];
 </script>
 <template>
-  <div class="w-screen bg-white text-black dark:bg-black dark:text-white">
+  <div
+    class="flex min-h-screen w-screen flex-col bg-white text-black dark:bg-black dark:text-white"
+  >
     <nav class="m-2 flex gap-1 rounded-full bg-green-300 p-1 dark:bg-green-700">
       <NuxtLink
         v-for="route in routes"
@@ -25,9 +27,35 @@ const routes: { path: string; name: string }[] = [
         >{{ route.name }}</NuxtLink
       >
     </nav>
-    <main>
+    <main class="grow">
       <slot />
     </main>
+    <footer class="m-1 flex flex-col items-center justify-center gap-1 text-xl">
+      <p class="flex gap-1 text-2xl">
+        <a href="https://github.com/Jak2k" target="_blank">
+          <Icon name="cib:github" />
+        </a>
+        <a href="https://mastodontech.de/@jak2k" target="_blank">
+          <Icon name="cib:mastodon" />
+        </a>
+        <a href="https://matrix.to/#/@jak2k:matrix.org">
+          <Icon name="cib:matrix" />
+        </a>
+        <a href="https://discord.com/users/599098199655055360" target="_blank">
+          <Icon name="cib:discord" />
+        </a>
+      </p>
+      <p>I <span class="heart inline-block">❤️</span> Open Source & Privacy</p>
+      <p>
+        <a
+          rel="license"
+          href="http://creativecommons.org/licenses/by/4.0/"
+          class="flex items-baseline gap-1"
+          >This site is licensed under <Icon name="cib:creative-commons" />
+          <Icon name="cib:creative-commons-by"
+        /></a>
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -65,5 +93,30 @@ body,
   #nuxt {
     background-color: white;
   }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.75);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.75);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
+
+.heart {
+  animation: heartbeat 1s infinite;
 }
 </style>
