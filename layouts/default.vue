@@ -32,17 +32,32 @@ const routes: { path: string; name: string }[] = [
     </main>
     <footer class="m-1 flex flex-col items-center justify-center gap-1 text-xl">
       <p class="flex gap-1 text-2xl">
-        <a href="https://github.com/Jak2k" target="_blank">
-          <Icon name="cib:github" />
+        <a
+          href="https://github.com/Jak2k"
+          target="_blank"
+          data-smart-cursor="profile"
+        >
+          <Icon name="cib:github" data-smart-cursor="profile" />
         </a>
-        <a href="https://mastodontech.de/@jak2k" target="_blank">
-          <Icon name="cib:mastodon" />
+        <a
+          href="https://mastodontech.de/@jak2k"
+          target="_blank"
+          data-smart-cursor="profile"
+        >
+          <Icon name="cib:mastodon" data-smart-cursor="profile" />
         </a>
-        <a href="https://matrix.to/#/@jak2k:matrix.org">
-          <Icon name="cib:matrix" />
+        <a
+          href="https://matrix.to/#/@jak2k:matrix.org"
+          data-smart-cursor="chat"
+        >
+          <Icon name="cib:matrix" data-smart-cursor="chat" />
         </a>
-        <a href="https://discord.com/users/599098199655055360" target="_blank">
-          <Icon name="cib:discord" />
+        <a
+          href="https://discord.com/users/599098199655055360"
+          target="_blank"
+          data-smart-cursor="chat"
+        >
+          <Icon name="cib:discord" data-smart-cursor="chat" />
         </a>
       </p>
       <p>I <span class="heart inline-block">❤️</span> Open Source & Privacy</p>
@@ -56,6 +71,7 @@ const routes: { path: string; name: string }[] = [
         /></a>
       </p>
     </footer>
+    <SmartCursor />
   </div>
 </template>
 

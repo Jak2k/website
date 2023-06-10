@@ -18,6 +18,7 @@ const posts = await useBlog(3);
     <NuxtLink
       to="/posts"
       class="underline decoration-dashed underline-offset-2 hover:decoration-solid"
+      data-smart-cursor="more"
       ><Icon name="line-md:chevron-small-right" />More</NuxtLink
     >
   </div>
