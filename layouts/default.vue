@@ -8,10 +8,6 @@ const routes: { path: string; name: string }[] = [
     name: "Posts",
     path: "/posts",
   },
-  {
-    name: "Me",
-    path: "/me",
-  },
 ];
 </script>
 <template>
