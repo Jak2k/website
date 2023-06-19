@@ -7,9 +7,10 @@ const posts = await useBlog(3);
     <h1 class="text-9xl">Jak2k</h1>
     <p class="mt-5 max-w-xl text-lg">
       Hi, I'm a frontend developer who loves working with Vue and NuxtJS. I used
-      to work with React, NextJS, and Astro, but I've since switched over to
-      Vue. I'm currently a student and I use Fedora Linux as my operating
-      system. I also enjoy working with TypeScript.
+      to work with <strong>React, NextJS, and Astro</strong>, but I've since
+      <strong>switched over to Vue & NuxtJS</strong>. I'm currently a
+      <strong>student</strong> and I use <strong>Fedora Linux</strong> as my
+      main operating system. I also enjoy working with TypeScript.
     </p>
     <h2 class="text-3xl">Latest Posts</h2>
     <NuxtLink
@@ -35,5 +36,10 @@ const posts = await useBlog(3);
 h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+strong {
+  font-weight: 800;
+  text-shadow: 0 0 0.5rem rgba(0, 255, 0, 1);
 }
 </style>
