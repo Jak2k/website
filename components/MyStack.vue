@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="container m-1 gap-1">
+  <div class="container m-1 gap-1 text-black">
     <div class="tech Typescript">Typescript</div>
     <div class="tech Nuxt">Nuxt</div>
     <div class="tech Vue">Vue</div>
@@ -29,39 +29,39 @@
 
 .Typescript {
   grid-area: Typescript;
-  background-color: rgb(0, 60, 255);
+  background-color: #3178c6;
   @apply rounded-b-2xl;
 }
 
 .Nuxt {
   grid-area: Nuxt;
-  background-color: rgb(0, 116, 0);
+  background-color: #00dc82;
   @apply rounded-tl-2xl;
 }
 
 .Vue {
   grid-area: Vue;
-  background-color: rgb(0, 138, 0);
+  background-color: #42b883;
 }
 
 .Astro {
   grid-area: Astro;
-  background-color: orange;
-  color: black;
+  background-color: #ff5d01;
 }
 
 .React {
   grid-area: React;
-  background-color: blue;
+  background-color: #149eca;
 }
 
 .Vite {
   grid-area: Vite;
-  background-color: purple;
+  background-color: #bc34fe;
   @apply rounded-tr-2xl;
 }
 
 .No-Framework {
   grid-area: No-Framework;
+  @apply text-black dark:text-white;
 }
 </style>

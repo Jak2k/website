@@ -18,7 +18,7 @@ const posts = await useBlog(3);
       :to="`/posts${post._path}`"
       class="m-1 block border-l-2 border-green-500 p-1"
     >
-      <h2 class="text-2xl">{{ post.title }}</h2>
+      <h3 class="text-2xl">{{ post.title }}</h3>
       <p>{{ post.description }}</p>
     </NuxtLink>
     <NuxtLink
@@ -31,3 +31,9 @@ const posts = await useBlog(3);
     <MyStack />
   </div>
 </template>
+<style>
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+</style>
