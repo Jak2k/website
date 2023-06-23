@@ -9,7 +9,7 @@ const { data } = await useAsyncData("home", () =>
 
 <template>
   <div v-if="data" class="m-5 mx-auto w-max min-w-[20vw]">
-    <h1 class="text-3xl text-green-400 dark:text-green-600">
+    <h1 class="text-5xl text-green-400 dark:text-green-600">
       {{ data?.title }}
     </h1>
     <ContentRenderer
