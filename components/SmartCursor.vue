@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const mousePosition = useMouse();
+const mousePosition = useMouse({
+  type: "client",
+});
 const cursorType = ref("default");
 
 function isLinkOrInLink(el: HTMLElement): true | false | "external" {
