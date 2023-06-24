@@ -16,21 +16,22 @@ function isLinkOrInLink(el: HTMLElement): true | false | "external" {
 function dataPropOrParentProp(
   el: HTMLElement,
   depth = 0
-): {
-  depth: number;
-  type: string | false;
-} {
-  return el.dataset.smartCursor
-    ? {
-        depth,
-        type: el.dataset.smartCursor,
-      }
-    : el.parentElement
-    ? dataPropOrParentProp(el.parentElement, depth + 1)
-    : {
-        depth,
-        type: false,
-      };
+): { depth: number; type: string | false } {
+  if (el.dataset.smartCursor) {
+    return {
+      depth,
+      type: el.dataset.smartCursor,
+    };
+  }
+
+  if (el.parentElement) {
+    return dataPropOrParentProp(el.parentElement, depth + 1);
+  }
+
+  return {
+    depth,
+    type: false,
+  };
 }
 
 useEventListener("mouseover", (e) => {
