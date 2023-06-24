@@ -60,7 +60,11 @@ const routes: { path: string; name: string }[] = [
           <Icon name="cib:discord" data-smart-cursor="chat" />
         </a>
       </p>
-      <p>I <span class="heart inline-block">❤️</span> Open Source & Privacy</p>
+      <p>
+        I
+        <span class="heart inline-block" data-smart-cursor="heart">❤️</span>
+        Open Source & Privacy
+      </p>
       <p>
         <a
           rel="license"

@@ -54,6 +54,9 @@ const mouseStyle = computed(() => {
   return {
     top: `${mousePosition?.y.value + 1 || 0}px`,
     left: `${mousePosition?.x.value + 1 || 0}px`,
+    // when cursor = heart, set color to red
+    color: cursorType.value === "heart" ? "white" : "",
+    backgroundColor: cursorType.value === "heart" ? "red" : "",
   };
 });
 
@@ -85,6 +88,9 @@ const icons = {
   edit: "line-md:edit",
   delete: "line-md:minus",
   save: "line-md:document",
+
+  // special
+  heart: "line-md:heart",
 };
 
 const icon = computed(() => {
