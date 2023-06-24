@@ -13,17 +13,38 @@ function isLinkOrInLink(el: HTMLElement): true | false | "external" {
   return false;
 }
 
+function dataPropOrParentProp(
+  el: HTMLElement,
+  depth = 0
+): {
+  depth: number;
+  type: string | false;
+} {
+  return el.dataset.smartCursor
+    ? {
+        depth,
+        type: el.dataset.smartCursor,
+      }
+    : el.parentElement
+    ? dataPropOrParentProp(el.parentElement, depth + 1)
+    : {
+        depth,
+        type: false,
+      };
+}
+
 useEventListener("mouseover", (e) => {
   const isExternal = e.target && isLinkOrInLink(e.target as HTMLElement);
   // @ts-ignore
-  if (e.target?.dataset?.smartCursor) {
-    // @ts-ignore
-    cursorType.value = e.target.dataset.smartCursor;
-    // @ts-ignore
+  const cursorProps = dataPropOrParentProp(e.target as HTMLElement);
+  if (cursorProps.depth < 2 && cursorProps.type) {
+    cursorType.value = cursorProps.type;
   } else if (isExternal === "external") {
     cursorType.value = "external";
   } else if (isExternal) {
     cursorType.value = "link";
+  } else if (cursorProps.type) {
+    cursorType.value = cursorProps.type;
   } else {
     cursorType.value = "default";
   }
