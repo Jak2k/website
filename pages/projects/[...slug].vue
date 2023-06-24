@@ -2,8 +2,6 @@
 const { slug } = useRoute().params;
 const slugIsArray = Array.isArray(slug);
 
-console.log("/projects/" + (slugIsArray ? slug.join("/") : slug));
-
 const { data } = await useAsyncData("home", () =>
   queryContent("/projects/" + (slugIsArray ? slug.join("/") : slug)).findOne()
 );
