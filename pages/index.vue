@@ -42,6 +42,12 @@ const posts = await useBlog(3);
         <p>{{ post.description }}</p></NuxtLink
       >
     </template>
+    <NuxtLink
+      to="/projects"
+      class="underline decoration-dashed underline-offset-2 hover:decoration-solid"
+      data-smart-cursor="more"
+      ><Icon name="line-md:chevron-small-right" />More</NuxtLink
+    >
   </div>
 </template>
 <style>
