@@ -5,6 +5,14 @@ const slugIsArray = Array.isArray(slug);
 const { data } = await useAsyncData("home", () =>
   queryContent("/projects/" + (slugIsArray ? slug.join("/") : slug)).findOne()
 );
+
+useSeoMeta({
+  title: data?.value?.title,
+  description: data?.value?.description,
+  ogTitle: data?.value?.title,
+  ogDescription: data?.value?.description,
+  author: "Jak2k",
+});
 </script>
 
 <template>

@@ -13,6 +13,18 @@ const routes: { path: string; name: string }[] = [
     path: "/projects",
   },
 ];
+
+useSeoMeta({
+  title: "Jak2k",
+  description: "Jak2k's personal website",
+  author: "Jak2k",
+});
+
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+});
 </script>
 <template>
   <div
