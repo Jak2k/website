@@ -15,8 +15,8 @@ const posts = await useBlog(3);
     <h2 class="text-3xl">Latest Posts</h2>
     <template v-for="post in posts" :key="post._path">
       <NuxtLink
-        v-if="!post._path?.startsWith('/projects')"
-        :to="`/posts${post._path}`"
+        v-if="post._path?.startsWith('/posts')"
+        :to="`${post._path}`"
         class="m-1 block border-l-2 border-green-500 p-1"
       >
         <h3 class="text-2xl">{{ post.title }}</h3>

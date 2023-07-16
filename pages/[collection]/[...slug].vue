@@ -1,9 +1,11 @@
 <script setup lang="ts">
-const { slug } = useRoute().params;
+const { slug, collection } = useRoute().params;
 const slugIsArray = Array.isArray(slug);
 
+const prefix = collection + "/";
+
 const { data } = await useAsyncData("home", () =>
-  queryContent(slugIsArray ? slug.join("/") : slug).findOne()
+  queryContent(prefix + (slugIsArray ? slug.join("/") : slug)).findOne()
 );
 
 useSeoMeta({
@@ -36,9 +38,9 @@ useSeoMeta({
   >
     <h1 class="text-3xl">404 - Not Found</h1>
     <NuxtLink
-      to="/posts"
+      :to="`/${collection}`"
       class="rounded-full bg-green-300 p-2 hover:bg-green-100 dark:bg-green-700 dark:hover:bg-green-900"
-      >Look for other posts</NuxtLink
+      >Look for other {{ collection }}</NuxtLink
     >
   </div>
 </template>
