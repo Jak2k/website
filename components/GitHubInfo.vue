@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   function timeAgoFromISODate(isoDate: string): string {
   const date = new Date(isoDate);
   const currentTime = new Date();
