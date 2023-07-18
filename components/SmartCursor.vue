@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { ref, computed } from 'vue'
+import { useMouse, useEventListener } from '@vueuse/core'
+
 const mousePosition = useMouse({
   type: "client",
 });
+
 const cursorType = ref("default");
 
 function isLinkOrInLink(el: HTMLElement): true | false | "external" {
@@ -63,20 +67,16 @@ const mouseStyle = computed(() => {
 
 const icons = {
   default: "",
-
   // links
   link: "line-md:arrow-right",
   more: "line-md:plus",
   external: "line-md:external-link",
-
   // social
   profile: "line-md:account",
   chat: "line-md:email",
-
   // media
   play: "line-md:play",
   pause: "line-md:pause",
-
   // navigation
   close: "line-md:close",
   "arrow-left": "line-md:arrow-left",
@@ -84,12 +84,10 @@ const icons = {
   "arrow-up": "line-md:arrow-up",
   "arrow-down": "line-md:arrow-down",
   confirm: "line-md:confirm",
-
   // actions
   edit: "line-md:edit",
   delete: "line-md:minus",
   save: "line-md:document",
-
   // special
   heart: "line-md:heart",
 };
@@ -109,9 +107,11 @@ const icon = computed(() => {
       :style="mouseStyle"
     >
       <Icon v-if="icon" :name="icon" class="h-5 w-5" />
-      <p v-else class="h-5 w-5"></p></div
-  ></ClientOnly>
+      <p v-else class="h-5 w-5"></p>
+    </div>
+  </ClientOnly>
 </template>
+
 <style>
 * {
   cursor: none !important;
@@ -123,5 +123,11 @@ const icon = computed(() => {
 
 :root:has(a:hover) {
   --cursor: "link";
+}
+
+/* Modify the CSS to style the menu items in green */
+:root:has(a:hover) {
+  --cursor: "link";
+  color: green;
 }
 </style>
