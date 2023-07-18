@@ -12,6 +12,19 @@
 </template>
 
 <script>
+  function timeAgoFromISODate(isoDate: string): string {
+  const date = new Date(isoDate);
+  const currentTime = new Date();
+
+  const timeDifferenceInSeconds = Math.floor((currentTime.getTime() - date.getTime()) / 1000);
+  const timeDifferenceInMinutes = Math.floor(timeDifferenceInSeconds / 60);
+
+  const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+  const timeAgo = formatter.format(-timeDifferenceInMinutes, 'minute');
+
+  return timeAgo;
+}
+
 export default {
   data() {
     return {
@@ -28,7 +41,7 @@ export default {
         // Fetch the last active day from the GitHub API
         const lastActiveResponse = await fetch('https://api.github.com/users/Jak2k/events');
         const lastActiveData = await lastActiveResponse.json();
-        this.lastActiveDay = lastActiveData[0].created_at;
+        this.lastActiveDay = timeAgoFromISODate(lastActiveData[0].created_at);
 
         // Fetch the total stars from the GitHub API
         const starsResponse = await fetch('https://api.github.com/users/Jak2k/repos');
