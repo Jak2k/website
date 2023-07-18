@@ -25,21 +25,24 @@ useHead({
     lang: "en",
   },
 });
+
+const menuOpen = useRef(false)
 </script>
 <template>
   <div class="flex min-h-screen w-screen flex-col bg-white text-black dark:bg-black dark:text-white">
     <nav class="m-2 flex gap-1 rounded-full bg-green-300 p-1 dark:bg-green-700">
       <!-- Add menu button here -->
-      <button class="rounded-full p-2 hover:bg-green-100 dark:hover:bg-green-900">
+      <button class="rounded-full p-2 hover:bg-green-100 dark:hover:bg-green-900" @click="menuOpen=!menuOpen">
         Menu
       </button>
     </nav>
     <!-- Add full-screen menu here -->
-    <div class="fixed inset-0 flex items-center justify-center bg-white text-black dark:bg-black dark:text-white">
+    <div class="fixed inset-0 flex items-center justify-center bg-white text-black dark:bg-black dark:text-white" v-if="menuOpen">
       <ul class="flex flex-col gap-2">
         <li class="text-green-500">Home</li>
         <li class="text-green-500">Posts</li>
         <li class="text-green-500">Projects</li>
+        <button @click="menuOpen=!menuOpen">X</button>
       </ul>
     </div>
     <main class="grow">
