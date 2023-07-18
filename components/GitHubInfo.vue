@@ -19,9 +19,8 @@
 
   // Find the latest event based on the "created_at" property
   const latestEvent = events.reduce((prev, current) =>
-    new Date(current.created_at) > new Date(prev.created_at) ? current : prev
+    new Date(current.created_at).getTime() > new Date(prev.created_at).getTime() ? current : prev
   );
-
   const latestEventTime = new Date(latestEvent.created_at);
   const currentTime = new Date();
 
