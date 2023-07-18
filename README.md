@@ -1,6 +1,14 @@
-# Nuxt 3 Minimal Starter
+# Jak2k's Personal Website
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to the repository for [Jak2k's personal website](https://jak2k.schwanenberg.name/). This site is a showcase of my work and thoughts as a frontend developer who loves working with Vue and NuxtJS.
+
+## Quick Links
+- [Website](https://jak2k.schwanenberg.name/)
+- [Posts](https://jak2k.schwanenberg.name/posts)
+- [Projects](https://jak2k.schwanenberg.name/projects)
+
+## Badges
+[Insert appropriate badges here]
 
 ## Setup
 
