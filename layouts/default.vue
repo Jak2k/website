@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const routes: { path: string; name: string }[] = [
   {
     name: "Home",
@@ -14,6 +16,12 @@ const routes: { path: string; name: string }[] = [
   },
 ];
 
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
 useSeoMeta({
   title: "Jak2k",
   description: "Jak2k's personal website",
@@ -26,18 +34,16 @@ useHead({
   },
 });
 </script>
+
 <template>
-  <div
-    class="flex min-h-screen w-screen flex-col bg-white text-black dark:bg-black dark:text-white"
-  >
+  <div class="flex min-h-screen w-screen flex-col bg-white text-black dark:bg-black dark:text-white">
     <nav class="m-2 flex gap-1 rounded-full bg-green-300 p-1 dark:bg-green-700">
       <NuxtLink
         v-for="route in routes"
         :key="route.path"
         :to="route.path"
         class="rounded-full p-2 hover:bg-green-100 dark:hover:bg-green-900"
-        >{{ route.name }}</NuxtLink
-      >
+      >{{ route.name }}</NuxtLink>
     </nav>
     <main class="grow">
       <slot />
@@ -82,7 +88,7 @@ useHead({
           rel="license"
           href="http://creativecommons.org/licenses/by/4.0/"
           class="flex items-baseline gap-1"
-          >This site is licensed under <Icon name="cib:creative-commons" />
+        >This site is licensed under <Icon name="cib:creative-commons" />
           <Icon name="cib:creative-commons-by"
         /></a>
       </p>
