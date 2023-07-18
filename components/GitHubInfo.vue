@@ -12,11 +12,20 @@
 </template>
 
 <script lang="ts">
-  function timeAgoFromISODate(isoDate: string): string {
-  const date = new Date(isoDate);
+  function timeAgoFromLatestEvent(events: any[]): string {
+  if (events.length === 0) {
+    return "No events found.";
+  }
+
+  // Find the latest event based on the "created_at" property
+  const latestEvent = events.reduce((prev, current) =>
+    new Date(current.created_at) > new Date(prev.created_at) ? current : prev
+  );
+
+  const latestEventTime = new Date(latestEvent.created_at);
   const currentTime = new Date();
 
-  const timeDifferenceInSeconds = Math.floor((currentTime.getTime() - date.getTime()) / 1000);
+  const timeDifferenceInSeconds = Math.floor((currentTime.getTime() - latestEventTime.getTime()) / 1000);
   const timeDifferenceInMinutes = Math.floor(timeDifferenceInSeconds / 60);
 
   const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
@@ -24,6 +33,7 @@
 
   return timeAgo;
 }
+
 
 export default {
   data() {
@@ -41,7 +51,7 @@ export default {
         // Fetch the last active day from the GitHub API
         const lastActiveResponse = await fetch('https://api.github.com/users/Jak2k/events');
         const lastActiveData = await lastActiveResponse.json();
-        this.lastActiveDay = timeAgoFromISODate(lastActiveData[0].created_at);
+        this.lastActiveDay = timeAgoFromLatestEvent(lastActiveData);
 
         // Fetch the total stars from the GitHub API
         const starsResponse = await fetch('https://api.github.com/users/Jak2k/repos');
