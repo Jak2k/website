@@ -10,8 +10,8 @@
 export default {
   data() {
     return {
-      lastActiveDay: null,
-      totalStars: null,
+      lastActiveDay: "",
+      totalStars: "",
       githubUrl: 'https://github.com/Jak2k'
     };
   },
