@@ -1,14 +1,8 @@
 # Jak2k's Personal Website
+[Website](https://jak2k.schwanenberg.name/) | [Posts](https://jak2k.schwanenberg.name/posts) | [Projects](https://jak2k.schwanenberg.name/projects)
+
 
 Welcome to the repository for [Jak2k's personal website](https://jak2k.schwanenberg.name/). This site is a showcase of my work and thoughts as a frontend developer who loves working with Vue and NuxtJS.
-
-## Quick Links
-- [Website](https://jak2k.schwanenberg.name/)
-- [Posts](https://jak2k.schwanenberg.name/posts)
-- [Projects](https://jak2k.schwanenberg.name/projects)
-
-## Badges
-[Insert appropriate badges here]
 
 ## Setup
 
