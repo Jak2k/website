@@ -26,9 +26,9 @@ export default {
     async fetchGitHubInfo() {
       try {
         // Fetch the last active day from the GitHub API
-        const lastActiveResponse = await fetch('https://api.github.com/users/Jak2k');
+        const lastActiveResponse = await fetch('https://api.github.com/users/Jak2k/events');
         const lastActiveData = await lastActiveResponse.json();
-        this.lastActiveDay = lastActiveData.updated_at;
+        this.lastActiveDay = lastActiveData[0].created_at;
 
         // Fetch the total stars from the GitHub API
         const starsResponse = await fetch('https://api.github.com/users/Jak2k/repos');
