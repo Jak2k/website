@@ -1,6 +1,16 @@
-# Nuxt 3 Minimal Starter
+# Jak2k's Website
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is the source code for Jak2k's personal website. The website is built with the following technologies:
+
+- [Nuxt](https://nuxt.com/)
+- [Tailwind](https://tailwindcss.com/)
+- [Vercel](https://vercel.com/)
+- [Nuxt Content](https://content.nuxtjs.org/)
+- [eslint](https://eslint.org/)
+- [prettier](https://prettier.io/)
+- [google fonts](https://fonts.google.com/)
+- [vueuse](https://vueuse.org/)
+- [nuxt-icon](https://nuxt.com/modules/icon/) [iconify](https://iconify.design/)
 
 ## Setup
 
