@@ -31,7 +31,7 @@
   const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
   const timeAgo = formatter.format(-timeDifferenceInMinutes, 'minute');
 
-  return timeAgo;
+  return `${timeAgo} (${latestEvent.type}`;
 }
 
 
