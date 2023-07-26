@@ -22,5 +22,27 @@ export default async function (req, res) {
 }
 
 function generateRssXml(feed) {
-  // Generate RSS XML here
+  const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+  <rss version="2.0">
+    <channel>
+      <title>${feed.title}</title>
+      <link>${feed.link}</link>
+      <description>${feed.description}</description>
+      <language>${feed.language}</language>
+      ${feed.items
+        .map(
+          (item) => `
+          <item>
+            <title>${item.title}</title>
+            <link>${item.link}</link>
+            <description>${item.description}</description>
+            <pubDate>${item.pubDate}</pubDate>
+          </item>
+        `
+        )
+        .join('')}
+    </channel>
+  </rss>`;
+
+  return rssXml;
 }
