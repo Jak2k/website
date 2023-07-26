@@ -7,16 +7,6 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "nuxt-icon",
-    {
-      buildModules: [
-        '@nuxt/content',
-      ],
-      content: {
-        api: {
-          baseURL: '/api',
-        },
-      },
-    },
   ],
   devtools: {
     enabled: true,
