@@ -1,7 +1,6 @@
-import { NuxtContentInstance } from '@nuxt/content/types/content'
+import { $content } from '@nuxt/content'
 
 export default async function (req, res) {
-  const { $content } = require('@nuxt/content')
   const articles = await $content('articles').fetch()
 
   const feed = {
