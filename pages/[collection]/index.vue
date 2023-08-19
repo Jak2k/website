@@ -9,7 +9,7 @@ const { collection } = useRoute().params;
     <template v-for="post in posts" :key="post._path">
       <NuxtLink
         v-if="post._path?.startsWith('/' + collection)"
-        :to="post._path.replace('/','')"
+        :to="post._path.replace('/', '')"
         class="m-1 block border-l-2 border-green-500 p-1"
       >
         <h3 class="text-2xl">{{ post.title }}</h3>
