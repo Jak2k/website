@@ -56,7 +56,7 @@ const menuOpen = ref(false);
         </NuxtLink>
       </ul>
     </nav>
-    <main class="grow">
+    <main class="m-3 mt-10 grow">
       <slot />
     </main>
     <footer class="m-1 flex flex-col items-center justify-center gap-1 text-xl">
