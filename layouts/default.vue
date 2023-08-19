@@ -1,8 +1,9 @@
 <script setup lang="ts">
-const routes: { path: string; name: string }[] = [
+const routes: { path: string; name: string; hint?: string }[] = [
   {
     name: "Home",
     path: "/",
+    hint: "You can also use Ctrl + Click the menu button to navigate to the home page",
   },
   {
     name: "Posts",
@@ -34,7 +35,8 @@ const menuOpen = ref(false);
   >
     <button
       class="fixed left-[50%] top-0 z-20 h-10 w-10 gap-1 rounded-full rounded-t-none bg-green-300 p-1 dark:bg-green-700"
-      @click="menuOpen = !menuOpen"
+      @click.exact="menuOpen = !menuOpen"
+      @click.ctrl="navigateTo('/')"
     >
       <Icon :name="menuOpen ? 'line-md:close' : 'line-md:menu'" />
     </button>
@@ -50,9 +52,10 @@ const menuOpen = ref(false);
           :key="route.path"
           :href="route.path"
           class="text-green-500"
+          :title="route.hint"
           @click="menuOpen = !menuOpen"
         >
-          {{ route.name }}
+          {{ route.name }}<span v-if="route.hint"> *</span>
         </NuxtLink>
       </ul>
     </nav>
