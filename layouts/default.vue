@@ -25,21 +25,38 @@ useHead({
     lang: "en",
   },
 });
+
+const menuOpen = ref(false);
 </script>
 <template>
   <div
     class="flex min-h-screen w-screen flex-col bg-white text-black dark:bg-black dark:text-white"
   >
-    <nav class="m-2 flex gap-1 rounded-full bg-green-300 p-1 dark:bg-green-700">
-      <NuxtLink
-        v-for="route in routes"
-        :key="route.path"
-        :to="route.path"
-        class="rounded-full p-2 hover:bg-green-100 dark:hover:bg-green-900"
-        >{{ route.name }}</NuxtLink
-      >
+    <button
+      class="fixed left-[50%] top-0 z-20 h-10 w-10 gap-1 rounded-full rounded-t-none bg-green-300 p-1 dark:bg-green-700"
+      @click="menuOpen = !menuOpen"
+    >
+      <Icon :name="menuOpen ? 'line-md:close' : 'line-md:menu'" />
+    </button>
+
+    <nav
+      v-if="menuOpen"
+      class="fixed inset-0 z-10 flex items-center justify-center bg-white text-black dark:bg-black dark:text-white"
+    >
+      <ul class="flex flex-col gap-5 text-3xl">
+        <NuxtLink
+          is="li"
+          v-for="route in routes"
+          :key="route.path"
+          :href="route.path"
+          class="text-green-500"
+          @click="menuOpen = !menuOpen"
+        >
+          {{ route.name }}
+        </NuxtLink>
+      </ul>
     </nav>
-    <main class="grow">
+    <main class="m-3 mt-10 grow">
       <slot />
     </main>
     <footer class="m-1 flex flex-col items-center justify-center gap-1 text-xl">
@@ -90,7 +107,6 @@ useHead({
     <SmartCursor />
   </div>
 </template>
-
 <style>
 .page-enter-active,
 .page-leave-active {

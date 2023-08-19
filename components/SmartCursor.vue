@@ -105,7 +105,7 @@ const icon = computed(() => {
 <template>
   <ClientOnly>
     <div
-      class="fixed aspect-square rounded-full rounded-tl-none bg-black p-1 text-white dark:bg-white dark:text-black"
+      class="fixed z-20 aspect-square rounded-full rounded-tl-none bg-black p-1 text-white dark:bg-white dark:text-black"
       :style="mouseStyle"
     >
       <Icon v-if="icon" :name="icon" class="h-5 w-5" />
