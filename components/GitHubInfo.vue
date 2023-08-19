@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const lastActiveDay = ref("");
-const totalStars = ref(0);
+const lastActiveDay = ref("...");
+const totalStars = ref("...");
 
 function timeAgoFromLatestEvent(events: any[]): string {
   if (events.length === 0) {
@@ -8,11 +8,7 @@ function timeAgoFromLatestEvent(events: any[]): string {
   }
 
   // Find the latest event based on the "created_at" property
-  const latestEvent = events.reduce((prev, current) =>
-    new Date(current.created_at).getTime() > new Date(prev.created_at).getTime()
-      ? current
-      : prev
-  );
+  const latestEvent = events[0];
   const latestEventTime = new Date(latestEvent.created_at);
   const currentTime = new Date();
 
@@ -35,7 +31,7 @@ async function fetchGitHubInfo() {
   try {
     // Fetch the last active day from the GitHub API
     const lastActiveResponse = await fetch(
-      "https://api.github.com/users/Jak2k/events"
+      "https://api.github.com/users/Jak2k/events?per_page=1"
     );
     const lastActiveData = await lastActiveResponse.json();
     lastActiveDay.value = timeAgoFromLatestEvent(lastActiveData);
@@ -58,7 +54,7 @@ async function fetchGitHubInfo() {
 </script>
 <template>
   <div>
-    <p>Last active day: {{ lastActiveDay }}</p>
+    <p>Last active on GitHub: {{ lastActiveDay }}</p>
     <p>Total stars: {{ totalStars }}</p>
   </div>
 </template>
