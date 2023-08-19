@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const posts = await useBlog(3);
 </script>
-
 <template>
   <div class="m-5 mx-auto w-fit min-w-[20vw] max-w-3xl">
     <h1 class="text-9xl underline decoration-green-500">Jak2k</h1>
+    <GitHubInfo />
     <p class="mt-5 max-w-xl text-lg">
       Hi, I'm a frontend developer who loves working with Vue and NuxtJS. I used
       to work with <strong>React, NextJS, and Astro</strong>, but I've since
@@ -50,6 +50,7 @@ const posts = await useBlog(3);
     >
   </div>
 </template>
+
 <style>
 h2 {
   margin-top: 2rem;
