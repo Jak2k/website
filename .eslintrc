@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "eslint:recommended",
-    "@nuxtjs/eslint-config-typescript",
-    "plugin:prettier/recommended"
-  ],
-  "root": true
-}

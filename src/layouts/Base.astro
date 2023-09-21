@@ -1,0 +1,40 @@
+---
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <nav
+      max-w-80ch
+      m-x-auto
+      m-y-5
+      border-1
+      border-gray-300
+      dark:border-gray-700
+      p-2.5
+      rounded-2.5
+    >
+      <a href="/">Home</a>
+    </nav>
+    <article
+      max-w-80ch
+      m-x-auto
+      m-t-30vh
+      p-2.5
+      m-y-5
+      border-1
+      border-gray-300
+      dark:border-gray-700
+      rounded-2.5
+    >
+      <h1 text-5xl m-b-2.5>{title}</h1>
+      <slot />
+    </article>
+  </body>
+</html>
