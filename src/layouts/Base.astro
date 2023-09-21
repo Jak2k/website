@@ -1,5 +1,14 @@
 ---
+import { ViewTransitions, fade } from "astro:transitions";
+
 const { title, description } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const routes: { path: string; title: string }[] = [
+  { path: "/", title: "Home" },
+  { path: "/post", title: "Posts" },
+];
 ---
 
 <html lang="en">
@@ -8,6 +17,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <ViewTransitions />
   </head>
   <body>
     <nav
@@ -20,7 +30,13 @@ const { title, description } = Astro.props;
       p-2.5
       rounded-2.5
     >
-      <a href="/">Home</a>
+      {
+        routes.map((r) => (
+          <a href={r.path} class="m-r-2.5">
+            {r.title}
+          </a>
+        ))
+      }
     </nav>
     <article
       max-w-80ch
@@ -32,9 +48,14 @@ const { title, description } = Astro.props;
       border-gray-300
       dark:border-gray-700
       rounded-2.5
+      transition:name="content"
     >
-      <h1 text-5xl m-b-2.5>{title}</h1>
+      <h1 text-5xl m-b-2.5 transition:name={`lnk-${currentPath}`}>
+        {title}
+      </h1>
       <slot />
     </article>
+
+    <slot name="additional" />
   </body>
 </html>
