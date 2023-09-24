@@ -8,4 +8,7 @@ export default defineConfig({
       injectReset: true, // or a path to the reset file
     }),
   ],
+  server: {
+    port: 3000,
+  },
 });
