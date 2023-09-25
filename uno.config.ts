@@ -12,7 +12,9 @@ import {
 export default defineConfig({
   shortcuts: {},
   presets: [
-    presetUno(),
+    presetUno({
+      dark: "media",
+    }),
     presetAttributify(),
     presetIcons({
       scale: 1.2,
