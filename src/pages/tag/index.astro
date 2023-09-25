@@ -32,7 +32,7 @@ const tags = posts.reduce((acc, post) => {
             href={`/tag/${tag.slug || tag}`}
             transition:name={`lnk-/tag/${tag.slug || tag}`}
           >
-            #{tag.slug || tag}
+            #{tag.slug || tag} {tag.slug ? "" : " (No additional info)"}
           </a>
         </li>
       ))
