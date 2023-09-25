@@ -1,15 +1,18 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import Base from "../../layouts/Base.astro";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
   const tags = posts.reduce((acc, post) => {
-    post.data.tags.forEach((tag) => {
-      if (!acc.includes(tag)) {
-        acc.push(tag);
-      }
-    });
+    post.data.tags.forEach(
+      (value: string | { collection: "tags"; slug: string }) => {
+        if (!acc.includes(value.slug || value)) {
+          acc.push(value.slug || value);
+        }
+      },
+      []
+    );
     return acc;
   }, []);
 
@@ -17,7 +20,9 @@ export async function getStaticPaths() {
     params: { tag },
     props: {
       posts: posts
-        .filter((post) => post.data.tags.includes(tag))
+        .filter((post) =>
+          post.data.tags.find((value) => value.slug || value === tag)
+        )
         .map((post) => ({
           title: post.data.title,
           slug: post.slug,
@@ -27,12 +32,21 @@ export async function getStaticPaths() {
 }
 
 const { posts } = Astro.props;
+const { tag } = Astro.params;
+
+// Get tag entry, if it exists
+const tagEntry = await getEntry("tags", tag);
+let RenderedEntry = null;
+if (tagEntry) {
+  RenderedEntry = (await tagEntry.render()).Content;
+}
 ---
 
 <Base
-  title={"#"+Astro.params.tag}
+  title={"#" + Astro.params.tag}
   description={`All post with the tag ${Astro.params.tag}`}
 >
+  {RenderedEntry ? <RenderedEntry /> : "No description available"}
   <ul slot="additional">
     <!-- Iterate over posts -->
     {
