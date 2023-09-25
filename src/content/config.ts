@@ -4,6 +4,7 @@ const tags = defineCollection({
   type: "content",
   schema: z.object({
     isProject: z.boolean().default(false),
+    title: z.string().optional(),
   }),
 });
 
