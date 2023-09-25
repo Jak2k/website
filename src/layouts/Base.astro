@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions, fade } from "astro:transitions";
 import { SEO } from "astro-seo";
+import { Icon } from "astro-icon";
 
 const { title, description, modifiedTime, tags } = Astro.props;
 
@@ -10,6 +11,25 @@ const routes: { path: string; title: string }[] = [
   { path: "/", title: "Home" },
   { path: "/post", title: "Posts" },
   { path: "/tag", title: "Tags" },
+];
+
+const socials: { name: string; url: string; icon: string }[] = [
+  {
+    name: "Mastodon",
+    url: "https://mastodontech.de/@Jak2k",
+    icon: "mdi:mastodon",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/Jak2k",
+    icon: "mdi:github",
+  },
+  { name: "RSS", url: "/feed.xml", icon: "mdi:rss" },
+  {
+    name: "Discord DM",
+    url: "https://discord.com/users/599098199655055360",
+    icon: "mdi:discord",
+  },
 ];
 ---
 
@@ -49,11 +69,21 @@ const routes: { path: string; title: string }[] = [
       dark:border-gray-700
       p-2.5
       rounded-2.5
+      flex
+      flex-row
     >
       {
         routes.map((r) => (
           <a href={r.path} class="m-r-2.5">
             {r.title}
+          </a>
+        ))
+      }
+      <span w-full></span>
+      {
+        socials.map((s) => (
+          <a href={s.url} class="m-r-2.5">
+            <Icon name={s.icon} height="1.5em" width="1.5em" inline />
           </a>
         ))
       }

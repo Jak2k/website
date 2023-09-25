@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@unocss/reset": "^0.56.2",
+    "astro-icon": "^0.8.1",
     "unocss": "^0.56.2"
   }
 }
