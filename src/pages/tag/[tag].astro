@@ -30,7 +30,7 @@ const { posts } = Astro.props;
 ---
 
 <Base
-  title={Astro.params.tag}
+  title={"#"+Astro.params.tag}
   description={`All post with the tag ${Astro.params.tag}`}
 >
   <ul slot="additional">
