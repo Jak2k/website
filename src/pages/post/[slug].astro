@@ -17,7 +17,12 @@ const { Content } = await entry.render();
 const firstLine = entry.body.split("\n")[0];
 ---
 
-<Base title={entry.data.title} description={firstLine}>
+<Base
+  title={entry.data.title}
+  description={firstLine}
+  modifiedTime={entry.data.lastUpdated}
+  tags={entry.data.tags}
+>
   <p>
     <!-- Iterate over tags -->
     {

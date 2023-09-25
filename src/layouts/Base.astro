@@ -2,7 +2,7 @@
 import { ViewTransitions, fade } from "astro:transitions";
 import { SEO } from "astro-seo";
 
-const { title, description, publishedTime, tags } = Astro.props;
+const { title, description, modifiedTime, tags } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 
@@ -23,9 +23,10 @@ const routes: { path: string; title: string }[] = [
         basic: {
           title,
           type: "website",
+          image: "",
         },
         article: {
-          publishedTime,
+          modifiedTime,
           tags,
         },
       }}
