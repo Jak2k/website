@@ -31,4 +31,9 @@ export default defineConfig({
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: "prose m-auto text-left".split(" "),
+  preflights: [
+    {
+      getCSS: ()=>"strong { text-shadow: 0 0 5px #0f0; }"
+    }
+  ]
 });
