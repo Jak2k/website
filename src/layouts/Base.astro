@@ -1,7 +1,8 @@
 ---
 import { ViewTransitions, fade } from "astro:transitions";
+import { SEO } from "astro-seo";
 
-const { title, description } = Astro.props;
+const { title, description, publishedTime, tags } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 
@@ -13,11 +14,23 @@ const routes: { path: string; title: string }[] = [
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <SEO
+      title={title}
+      description={description}
+      charset="utf-8"
+      openGraph={{
+        basic: {
+          title,
+          type: "website",
+        },
+        article: {
+          publishedTime,
+          tags,
+        },
+      }}
+    />
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
     <ViewTransitions />
   </head>
   <body>
