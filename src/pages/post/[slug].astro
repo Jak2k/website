@@ -40,4 +40,22 @@ const firstLine = entry.body.split("\n")[0];
   <div prose>
     <Content />
   </div>
+  <div slot="additional" max-w-80ch m-x-auto m-b-5>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="jak2k/website"
+      data-repo-id="R_kgDOJrCLDA"
+      data-category="Comments"
+      data-category-id="DIC_kwDOJrCLDM4CW_j9"
+      data-mapping="specific"
+      data-term={entry.slug}
+      data-strict="1"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="en"
+      crossorigin="anonymous"
+      async></script>
+  </div>
 </Base>
