@@ -30,6 +30,10 @@ Some of the features of UnoCSS are:
 - Interactive Docs: You can quickly look up a class or a css property
 - And many more
 
+```html
+<div bg-red-500 text-white p-4 rounded-lg>This is a card</div>
+```
+
 ## How can I try it out?
 
 - [Documentation](https://unocss.dev/)
