@@ -46,7 +46,10 @@ if (tagEntry) {
   title={"#" + Astro.params.tag}
   description={`All post with the tag ${Astro.params.tag}`}
 >
-  {RenderedEntry ? <RenderedEntry /> : "No description available"}
+  <div prose>
+    {RenderedEntry ? <RenderedEntry /> : "No description available"}
+  </div>
+
   <ul slot="additional">
     <!-- Iterate over posts -->
     {
