@@ -15,6 +15,6 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  site: "https://jak2k.schwaneberg.name",
+  site: "https://jak2k.schwanenberg.name",
   adapter: vercel(),
 });
