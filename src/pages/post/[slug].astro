@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("posts");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+// 2. For your template, you can get the entry directly from the prop
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// get first line
+const firstLine = entry.body.split("\n")[0];
+---
+
+<Base
+  title={entry.data.title}
+  description={firstLine}
+  modifiedTime={entry.data.lastUpdated}
+  tags={entry.data.tags}
+>
+  <p>
+    <!-- Iterate over tags -->
+    {
+      entry.data.tags.map((tag: string) => (
+        <a
+          mx-1
+          href={`/tag/${tag.slug || tag}`}
+          transition:name={`lnk-/tag/${tag.slug || tag}`}
+        >
+          #{tag.slug || tag}
+        </a>
+      ))
+    }
+  </p>
+  <div prose>
+    <Content />
+  </div>
+  <div slot="additional" max-w-80ch m-x-auto m-b-5>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="jak2k/website"
+      data-repo-id="R_kgDOJrCLDA"
+      data-category="Comments"
+      data-category-id="DIC_kwDOJrCLDM4CW_j9"
+      data-mapping="specific"
+      data-term={entry.slug}
+      data-strict="1"
+      data-reactions-enabled="1"
+      data-emit-metadata="1"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="en"
+      crossorigin="anonymous"
+      async></script>
+  </div>
+</Base>

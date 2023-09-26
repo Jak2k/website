@@ -1,0 +1,72 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  const tags = posts.reduce((acc, post) => {
+    post.data.tags.forEach(
+      (value: string | { collection: "tags"; slug: string }) => {
+        if (!acc.includes(value.slug || value)) {
+          acc.push(value.slug || value);
+        }
+      },
+      []
+    );
+    return acc;
+  }, []);
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: {
+      posts: posts
+        .filter((post) =>
+          post.data.tags.find((value) => value.slug || value === tag)
+        )
+        .map((post) => ({
+          title: post.data.title,
+          slug: post.slug,
+        })),
+    },
+  }));
+}
+
+const { posts } = Astro.props;
+const { tag } = Astro.params;
+
+// Get tag entry, if it exists
+const tagEntry = await getEntry("tags", tag);
+let RenderedEntry = null;
+if (tagEntry) {
+  RenderedEntry = (await tagEntry.render()).Content;
+}
+---
+
+<Base
+  title={"#" + Astro.params.tag}
+  description={`All post with the tag ${Astro.params.tag}`}
+>
+  <div prose>
+    {RenderedEntry ? <RenderedEntry /> : "No description available"}
+  </div>
+
+  <ul slot="additional">
+    <!-- Iterate over posts -->
+    {
+      posts.map((post) => (
+        <li
+          max-w-80ch
+          m-x-auto
+          p-2.5
+          m-y-2.5
+          border-1
+          border-gray-300
+          dark:border-gray-700
+          rounded-2.5
+        >
+          <a href={`/post/${post.slug}`}>{post.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

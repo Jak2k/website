@@ -1,3 +1,5 @@
 {
-  "conventionalCommits.scopes": ["content"]
+  "conventionalCommits.scopes": [
+    "content"
+  ]
 }

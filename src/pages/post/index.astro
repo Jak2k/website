@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const posts = await getCollection("posts");
+---
+
+<Base title="Posts" description="All posts by Jak2k">
+  <ul slot="additional">
+    {
+      posts.map((post) => (
+        <li
+        max-w-80ch
+      m-x-auto
+      p-2.5
+      m-y-2.5
+      border-1
+      border-gray-300
+      dark:border-gray-700
+      rounded-2.5
+    >
+          <a href={`/post/${post.slug}`} transition:name={`lnk-/post/${post.slug}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

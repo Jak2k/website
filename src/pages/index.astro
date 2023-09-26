@@ -1,0 +1,95 @@
+---
+import { getCollection } from "astro:content";
+import Stack from "../content/components/Stack.astro";
+import Base from "../layouts/Base.astro";
+
+// get all posts. sort them by date, featured are first
+const posts = await getCollection("posts");
+const sortedPosts = posts.sort((a, b) => {
+  const aFeaturedWeight = a.data.featured ? 1 : 0;
+  const bFeaturedWeight = b.data.featured ? 1 : 0;
+
+  const aDateWeight = new Date(a.data.lastUpdated).getTime() / 1000000;
+  const bDateWeight = new Date(b.data.lastUpdated).getTime() / 1000000;
+
+  const aWeight = aFeaturedWeight * 1000000000 + aDateWeight;
+  const bWeight = bFeaturedWeight * 1000000000 + bDateWeight;
+
+  return bWeight - aWeight;
+});
+
+// get all tags, that are project tags
+const tags = await getCollection("tags");
+const projectTags = tags.filter((tag) => tag.data.isProject);
+---
+
+<Base title="Jak2k" description="Jak2k's personal website">
+  <p>
+    Hi, I'm a frontend developer who loves working with Vue and NuxtJS. I used
+    to work with <strong>React and NextJS</strong>, but I've since <strong
+      >switched over to Vue, Astro &amp; NuxtJS</strong
+    >. I'm currently a <strong>student</strong> and I use <strong
+      >Fedora Linux</strong
+    > as my main operating system. I also enjoy working with <strong
+      >TypeScript</strong
+    >.
+  </p>
+  <div slot="additional">
+    <div max-w-80ch m-x-auto p-2.5 m-t-5>
+      <h2 text-2xl>Posts</h2>
+    </div>
+    <ul>
+      {
+        sortedPosts.map((post) => (
+          <li
+            max-w-80ch
+            m-x-auto
+            p-2.5
+            m-y-2.5
+            border-1
+            border-gray-300
+            dark:border-gray-700
+            rounded-2.5
+          >
+            <a
+              href={`/post/${post.slug}`}
+              transition:name={`lnk-/post/${post.slug}`}
+            >
+              {post.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div max-w-80ch m-x-auto p-2.5 m-t-5>
+      <h2 text-2xl>Projects</h2>
+    </div>
+    <ul>
+      {
+        projectTags.map((tag) => (
+          <li
+            max-w-80ch
+            m-x-auto
+            p-2.5
+            m-y-2.5
+            border-1
+            border-gray-300
+            dark:border-gray-700
+            rounded-2.5
+          >
+            <a
+              href={`/tag/${tag.slug}`}
+              transition:name={`lnk-/tag/${tag.slug}`}
+            >
+              {tag.data.title || tag.slug}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div max-w-80ch m-x-auto p-2.5 m-t-5>
+      <h2 text-2xl>My Stack</h2>
+    </div>
+    <Stack />
+  </div>
+</Base>
