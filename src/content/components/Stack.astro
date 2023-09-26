@@ -1,0 +1,63 @@
+<div class="container m-1 gap-1 text-black">
+  <div class="tech Typescript">Typescript</div>
+  <div class="tech Nuxt">Nuxt</div>
+  <div class="tech Vue">Vue</div>
+  <div class="tech Astro">Astro</div>
+  <div class="tech Vite">Vite</div>
+  <div class="tech No-Framework">No Framework / React / Vue</div>
+</div>
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Nuxt Astro Vite"
+      "Vue Vue No-Framework"
+      "Typescript Typescript Typescript";
+    max-width: 80ch;
+    margin: 1.25rem auto;
+    border-radius: 0.625rem;
+    overflow: hidden;
+  }
+
+  .tech {
+    @apply p-3 text-center;
+  }
+
+  .Typescript {
+    grid-area: Typescript;
+    background-color: #3178c6;
+  }
+
+  .Nuxt {
+    grid-area: Nuxt;
+    background-color: #00dc82;
+  }
+
+  .Vue {
+    grid-area: Vue;
+    background-color: #42b883;
+  }
+
+  .Astro {
+    grid-area: Astro;
+    background-color: #ff5d01;
+  }
+
+  .React {
+    grid-area: React;
+    background-color: #149eca;
+  }
+
+  .Vite {
+    grid-area: Vite;
+    background-color: #bc34fe;
+  }
+
+  .No-Framework {
+    grid-area: No-Framework;
+    @apply text-black dark:text-white;
+  }
+</style>

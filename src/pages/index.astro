@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import Stack from "../content/components/Stack.astro";
 import Base from "../layouts/Base.astro";
 
 // get all posts. sort them by date, featured are first
@@ -86,5 +87,9 @@ const projectTags = tags.filter((tag) => tag.data.isProject);
         ))
       }
     </ul>
+    <div max-w-80ch m-x-auto p-2.5 m-t-5>
+      <h2 text-2xl>My Stack</h2>
+    </div>
+    <Stack />
   </div>
 </Base>
