@@ -5,7 +5,7 @@ featured: true
 lastUpdated: 2023-09-25T16:52:57Z
 ---
 
-In this post, I will explain why you should use [UnoCSS](unocss.dev/) instead of [Tailwind](https://tailwindcss.com/).
+In this post, I will explain why you should use [UnoCSS](https://unocss.dev/) instead of [Tailwind](https://tailwindcss.com/).
 
 ## What is Tailwind? (For those who don't know)
 
