@@ -53,6 +53,9 @@ const projectTags = tags.filter((tag) => tag.data.isProject);
           >
             <a
               href={`/post/${post.slug}`}
+              data-track-content
+              data-content-name={post.slug}
+              data-content-target={`/post/${post.slug}`}
               transition:name={`lnk-/post/${post.slug}`}
             >
               {post.data.title}
