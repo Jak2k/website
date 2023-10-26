@@ -74,6 +74,13 @@ const socials: { name: string; url: string; icon: string }[] = [
         g.async = true;
         g.src = u + "matomo.js";
         s.parentNode.insertBefore(g, s);
+        document.addEventListener("astro:after-swap", () => {
+          _paq.push(["setCustomUrl", "/" + window.location.pathname]);
+          _paq.push(["setDocumentTitle", document.title]);
+          _paq.push(["trackPageView"]);
+          _paq.push(["trackVisibleContentImpressions"]);
+          _paq.push(["enableLinkTracking"]);
+        });
       })();
     </script>
     <!-- End Matomo Code -->
