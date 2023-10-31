@@ -143,6 +143,12 @@ export function init() {
         // Display the result
         const resultText = document.querySelector("[data-fw]");
         resultText!.textContent = result[0];
+
+        if(result[0] === "astro") {
+          document.querySelector("[data-get-started]")!.innerHTML = `Aggregata wrote a nice introduction on how to <a href="https://aggregata.de/en/blog/astro/astro-an-introduction-to-your-next-project/"><strong>get started with Astro</strong></a>. <strong>They use Tailwind CSS</strong>, but you can also use UnoCSS. <a href="/post/unocss-tailwind"><strong>I explain why you should use UnoCSS</strong></a> in another article.`;
+        } else {
+          document.querySelector("[data-get-started]")!.innerHTML = `Nuxt has a great <a href="https://nuxt.com/docs/getting-started/installation">getting started guide</a>.`;
+        }
       } else if(result.length > 1) {
         const resultOne = document.querySelector("[data-result-one]");
         resultOne!.hidden = true;
