@@ -16,12 +16,12 @@ const { nuxt, astro, question, slug } = Astro.props;
   <h3 m-y-2.5>{question}</h3>
 
   <label for={slug + "-astro"}>
-    <input type="radio" name={slug} value="astro" id={slug + "-astro"} />
+    <input type="radio" name={slug} value="astro" id={slug + "-astro"} m-x-1 />
     {astro}
   </label>
 
   <label for={slug + "-nuxt"}>
-    <input type="radio" name={slug} value="nuxt" id={slug + "-nuxt"} />
+    <input type="radio" name={slug} value="nuxt" id={slug + "-nuxt"} m-x-1 />
     {nuxt}
   </label>
 </div>
