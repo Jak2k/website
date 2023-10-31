@@ -46,6 +46,24 @@ const firstLine = entry.body.split("\n")[0];
         href="https://github.com/Jak2k/website">GitHub repo</a
       >.
     </p>
+    <script src="../../components/interactive/decision/loader.ts"></script>
+    <script
+      data-interactive={entry.data.isInteractive}
+      id="interactive-enabler"
+      type="module"
+    >
+      // get the data-interactive attribute
+      // @ts-ignore
+      const isInteractive = document.getElementById("interactive-enabler")
+        .dataset.interactive;
+      if (isInteractive === "decision") {
+        // fire "interactive-decision:enable" event
+        const event = new Event("interactive-decision:enable");
+        setTimeout(() => {
+          document.dispatchEvent(event);
+        }, 1000);
+      }
+    </script>
   </div>
   <div slot="additional" max-w-80ch m-x-auto m-b-5>
     <script
@@ -63,7 +81,6 @@ const firstLine = entry.body.split("\n")[0];
       data-theme="preferred_color_scheme"
       data-lang="en"
       crossorigin="anonymous"
-      async
-    ></script>
+      async></script>
   </div>
 </Base>

@@ -1,0 +1,27 @@
+---
+const { nuxt, astro, question, slug } = Astro.props;
+---
+
+<div
+  data-question={slug}
+  flex
+  flex-col
+  border-1
+  border-green-300
+  dark:border-green-700
+  rounded-2.5
+  p-2.5
+  m-y-2.5
+>
+  <h3 m-y-2.5>{question}</h3>
+
+  <label for={slug + "-astro"}>
+    <input type="radio" name={slug} value="astro" id={slug + "-astro"} />
+    {astro}
+  </label>
+
+  <label for={slug + "-nuxt"}>
+    <input type="radio" name={slug} value="nuxt" id={slug + "-nuxt"} />
+    {nuxt}
+  </label>
+</div>

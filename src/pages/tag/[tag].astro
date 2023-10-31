@@ -21,12 +21,12 @@ export async function getStaticPaths() {
     props: {
       posts: posts
         .filter((post) => {
-          console.log("Checking post", post.data);
           // normalize tags
-          const tags = post.data.tags.map(tag => typeof tag === "string" ? tag : tag.slug)
-          return tags.includes(tag)
-        }
-        )
+          const tags = post.data.tags.map((tag) =>
+            typeof tag === "string" ? tag : tag.slug
+          );
+          return tags.includes(tag);
+        })
         .map((post) => ({
           title: post.data.title,
           slug: post.slug,

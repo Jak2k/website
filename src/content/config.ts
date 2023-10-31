@@ -15,6 +15,8 @@ const posts = defineCollection({
     tags: z.array(reference('tags').or(z.string())),
     featured: z.boolean(),
     lastUpdated: z.date(),
+    // must be "decision"
+    isInteractive: z.string().regex(/^decision$/).optional(),
   }),
 });
 
