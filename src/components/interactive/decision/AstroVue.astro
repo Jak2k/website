@@ -14,7 +14,7 @@ const { nuxt, astro, question, slug } = Astro.props;
   m-y-2.5
 >
   <h3 m-y-2.5>{question}</h3>
-
+  <noscript>This needs JavaScript to work. Please enable it.</noscript>
   <label for={slug + "-astro"}>
     <input type="radio" name={slug} value="astro" id={slug + "-astro"} m-x-1 />
     {astro}
