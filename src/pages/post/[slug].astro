@@ -27,11 +27,7 @@ const firstLine = entry.body.split("\n")[0];
     <!-- Iterate over tags -->
     {
       entry.data.tags.map((tag: string) => (
-        <a
-          mx-1
-          href={`/tag/${tag.slug || tag}`}
-          transition:name={`lnk-/tag/${tag.slug || tag}`}
-        >
+        <a mx-1 href={`/tag/${tag.slug || tag}`}>
           #{tag.slug || tag}
         </a>
       ))

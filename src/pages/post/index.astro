@@ -19,7 +19,7 @@ const posts = await getCollection("posts");
       dark:border-gray-700
       rounded-2.5
     >
-          <a href={`/post/${post.slug}`} data-track-content data-content-name={post.slug} data-content-target={`/post/${post.slug}`} transition:name={`lnk-/post/${post.slug}`}>{post.data.title}</a>
+          <a href={`/post/${post.slug}`} data-track-content data-content-name={post.slug} data-content-target={`/post/${post.slug}`}>{post.data.title}</a>
         </li>
       ))
     }

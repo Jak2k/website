@@ -56,7 +56,6 @@ const projectTags = tags.filter((tag) => tag.data.isProject);
               data-track-content
               data-content-name={post.slug}
               data-content-target={`/post/${post.slug}`}
-              transition:name={`lnk-/post/${post.slug}`}
             >
               {post.data.title}
             </a>
@@ -80,12 +79,7 @@ const projectTags = tags.filter((tag) => tag.data.isProject);
             dark:border-gray-700
             rounded-2.5
           >
-            <a
-              href={`/tag/${tag.slug}`}
-              transition:name={`lnk-/tag/${tag.slug}`}
-            >
-              {tag.data.title || tag.slug}
-            </a>
+            <a href={`/tag/${tag.slug}`}>{tag.data.title || tag.slug}</a>
           </li>
         ))
       }
