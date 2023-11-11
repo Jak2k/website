@@ -5,13 +5,13 @@ featured: true
 lastUpdated: 2023-11-11T22:26:46Z
 ---
 
-Website performance is climate protection. Every bit of data that is transferred over the internet consumes energy. What can you do to reduce your website's carbon footprint and what did I do to reduce mine?
+Website **performance is climate protection**. Every bit of data that is transferred over the internet consumes energy. What can you do to reduce your website's carbon footprint and what did I do to reduce mine?
 
 ## The Problem
 
-Most websites load lots of JavaScript. Most of this isn't really needed. That means that the browser has to download and execute lots of code has no real benefit for the user. This is a waste of energy. The more energy is wasted, the more CO2 is emitted. This is bad for the climate.
+Most websites load lots of **JavaScript**. **Most** of this **isn't really needed**. That means that the browser has to download and execute lots of code has no real benefit for the user. This is a **waste of energy**. The more energy is wasted, the more CO2 is emitted. This is bad for the climate.
 
-Another problem are huge images. Most images can't even be seen in full resolution on most screens.
+Another problem are **huge images**. Most images can't even be seen in full resolution on most screens.
 
 ## The Solution
 
@@ -25,10 +25,10 @@ But even in Astro I made changes later. Initially I had enabled view-transitions
 
 ## What you can do
 
-- Use a static site generator like [Astro](https://astro.build/) when possible
-- Reduce the amount of JavaScript that is loaded
-- Reduce the size of images or avoid them completely (like I did on this blog)
-- Use a green hoster
-- Enable compression (gzip, brotli)
+- Use a **static site generator** like [Astro](https://astro.build/) when possible
+- **Reduce** the amount of **JavaScript** that is loaded
+- **Reduce** the **size of images** or avoid them completely (like I did on this blog)
+- Use a **green hoster**
+- Enable **compression** (gzip, brotli)
 - Disable JavaScript in your browser (There is [NoScript](https://addons.mozilla.org/en-US/firefox/addon/noscript/) for Firefox. In Chrom(e/ium) you can disable JavaScript in the site settings).
 - Use an adblocker. Ads are just unnecessary :-) (I use [uBlock Origin](https://ublockorigin.com/) which is available for all major browsers)
