@@ -25,7 +25,7 @@ Some of the features of UnoCSS are:
 
 - Presets, like `preset-wind` which is similar to Tailwind
 - Dark mode
-- User-defined shortcuts: `btn` instead of `button`
+- User-defined shortcuts: `btn` instead of `bg-red-500 border-solid border-1 border-black rounded-full`
 - Extractors: For example, `attributify` lets you write `bg-red-500 text-3xl` instead of `class="bg-red-500 text-3xl"`
 - Interactive Docs: You can quickly look up a class or a css property
 - And many more
