@@ -18,6 +18,25 @@ const post = entry;
 // get first line
 const firstLine = (post.body.split("\n")[0] ||
           post.body.split("\n")[1] || post.body.split("\n")[2]);
+
+const jsonld = <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://jak2k.schwanenberg.name/post/${entry.slug}`
+  },
+  "headline": entry.data.title,
+  "description": firstLine,
+  "image": "",  
+  "author": {
+    "@type": "Person",
+    "name": "Jak2k",
+    "url": "https://jak2k.schwanenberg.name"
+  }
+}
+</script>
 ---
 
 <Base
