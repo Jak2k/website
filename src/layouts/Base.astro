@@ -3,7 +3,7 @@
 import { SEO } from "astro-seo";
 import { Icon } from "astro-icon";
 
-const { title, description, modifiedTime, tags } = Astro.props;
+const { title, description, modifiedTime, tags, jsonld } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 
@@ -57,6 +57,7 @@ const socials: { name: string; url: string; icon: string }[] = [
     />
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
     <!-- Matomo -->
     <script is:inline>
       var _paq = (window._paq = window._paq || []);
