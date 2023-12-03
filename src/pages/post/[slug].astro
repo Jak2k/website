@@ -19,8 +19,7 @@ const post = entry;
 const firstLine = (post.body.split("\n")[0] ||
           post.body.split("\n")[1] || post.body.split("\n")[2]);
 
-const jsonld = <script type="application/ld+json">
-{
+const jsonld = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "mainEntityOfPage": {
@@ -36,7 +35,6 @@ const jsonld = <script type="application/ld+json">
     "url": "https://jak2k.schwanenberg.name"
   }
 }
-</script>
 ---
 
 <Base
@@ -44,6 +42,7 @@ const jsonld = <script type="application/ld+json">
   description={firstLine}
   modifiedTime={entry.data.lastUpdated}
   tags={entry.data.tags}
+  jsonld={jsonld}
 >
   <p style="line-height: 2">
     <!-- Iterate over tags -->
