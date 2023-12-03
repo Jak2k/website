@@ -26,11 +26,11 @@ const firstLine = (post.body.split("\n")[0] ||
   modifiedTime={entry.data.lastUpdated}
   tags={entry.data.tags}
 >
-  <p>
+  <p style="line-height: 2">
     <!-- Iterate over tags -->
     {
       entry.data.tags.map((tag: string) => (
-        <a mx-1 href={`/tag/${tag.slug || tag}`}>
+        <a h-12 mx-2 my-6 href={`/tag/${tag.slug || tag}`}>
           #{tag.slug || tag}
         </a>
       ))
