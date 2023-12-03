@@ -13,6 +13,8 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
+const post = entry;
+
 // get first line
 const firstLine = (post.body.split("\n")[0] ||
           post.body.split("\n")[1] || post.body.split("\n")[2]);
