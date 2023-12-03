@@ -30,7 +30,7 @@ const firstLine = (post.body.split("\n")[0] ||
     <!-- Iterate over tags -->
     {
       entry.data.tags.map((tag: string) => (
-        <a mx-1 h-12 href={`/tag/${tag.slug || tag}`}>
+        <a mx-1 h-12 my href={`/tag/${tag.slug || tag}`}>
           #{tag.slug || tag}
         </a>
       ))
