@@ -109,7 +109,7 @@ const socials: { name: string; url: string; icon: string }[] = [
       <span w-full></span>
       {
         socials.map((s) => (
-          <a href={s.url} class="m-r-2.5" target="_blank" rel="noopener me">
+          <a href={s.url} aria-label={s.name} class="m-r-2.5" target="_blank" rel="noopener me">
             <Icon name={s.icon} height="1.5em" width="1.5em" inline />
           </a>
         ))
