@@ -57,7 +57,7 @@ const socials: { name: string; url: string; icon: string }[] = [
     />
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {jsonld && <script type="application/ld+json" is:inline>{JSON.stringify(jsonld)}</script>}
+    {jsonld && `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>`}
     <!-- Matomo -->
     <script is:inline>
       var _paq = (window._paq = window._paq || []);
