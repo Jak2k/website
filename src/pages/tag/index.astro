@@ -4,14 +4,17 @@ import Base from "../../layouts/Base.astro";
 
 const posts = await getCollection("posts");
 
-const tags = posts.reduce((acc, post) => {
+const tags = [...new Set(posts.reduce((acc, post) => {
   post.data.tags.forEach((tag) => {
+    tag = tag.slug || `${tag} (No additional info)`;
     if (!acc.includes(tag)) {
       acc.push(tag);
     }
   });
   return acc;
-}, []);
+}, []))].sort();
+
+console.log(tags);
 ---
 
 <Base title="Tags" description="All tags by Jak2k">
@@ -28,8 +31,8 @@ const tags = posts.reduce((acc, post) => {
           dark:border-gray-700
           rounded-2.5
         >
-          <a href={`/tag/${tag.slug || tag}`}>
-            #{tag.slug || tag} {tag.slug ? "" : " (No additional info)"}
+          <a href={`/tag/${tag}`}>
+            #{tag}
           </a>
         </li>
       ))
