@@ -3,7 +3,10 @@
 import { SEO } from "astro-seo";
 import { Icon } from "astro-icon";
 
-const { title, description, modifiedTime, tags, jsonld, prefetch } = Astro.props;
+let { title, description, modifiedTime, tags, jsonld, prefetch } = Astro.props;
+
+tags = tags || [];
+tags = tags.map((t) => t.slug || t);
 
 const currentPath = Astro.url.pathname;
 
@@ -55,11 +58,14 @@ const socials: { name: string; url: string; icon: string }[] = [
         },
       }}
     />
-    {(prefetch || []).map(p=>(<link rel="prefetch" href={p}>
-))}
+    {(prefetch || []).map((p) => <link rel="prefetch" href={p} />)}
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+    {
+      jsonld && (
+        <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+      )
+    }
     <!-- Matomo -->
     <script is:inline>
       var _paq = (window._paq = window._paq || []);
@@ -105,7 +111,13 @@ const socials: { name: string; url: string; icon: string }[] = [
       <span w-full></span>
       {
         socials.map((s) => (
-          <a href={s.url} aria-label={s.name} class="m-r-2.5" target="_blank" rel="noopener me">
+          <a
+            href={s.url}
+            aria-label={s.name}
+            class="m-r-2.5"
+            target="_blank"
+            rel="noopener me"
+          >
             <Icon name={s.icon} height="1.5em" width="1.5em" inline />
           </a>
         ))
@@ -121,7 +133,7 @@ const socials: { name: string; url: string; icon: string }[] = [
       border-gray-300
       dark:border-gray-700
       rounded-2.5
-      >
+    >
       <h1 property="https://purl.org/dc/terms/title" text-5xl m-b-2.5>
         {title}
       </h1>
@@ -135,7 +147,10 @@ const socials: { name: string; url: string; icon: string }[] = [
         m-b-2.5
         class="flex flex-col flex-items-center"
       >
-        <a rel="license" property="https://creativecommons.org/ns#license" href="http://creativecommons.org/licenses/by-nc/4.0/"
+        <a
+          rel="license"
+          property="https://creativecommons.org/ns#license"
+          href="http://creativecommons.org/licenses/by-nc/4.0/"
           ><img
             alt="Creative Commons License"
             style="border-width:0"
