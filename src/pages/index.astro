@@ -38,7 +38,18 @@ const projectTags = tags.filter((tag) => tag.data.isProject);
   </p>
   <div slot="additional">
     <div max-w-80ch m-x-auto p-2.5 m-t-5>
-      <h2 text-2xl>Posts</h2>
+      <h2 text-2xl flex flex-row flex-justify-between flex-items-baseline>
+        <span>Posts</span>
+        <a
+          href="/post"
+          text-sm
+          underline
+          underline-dashed
+          underline-1
+          underline-black
+          dark:underline-white>View All</a
+        >
+      </h2>
     </div>
     <ul flex-wrap grid grid-cols-1 gap-2.5 xsm:grid-cols-2>
       {
