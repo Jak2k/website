@@ -25,10 +25,12 @@ const projectTags = tags.filter((tag) => tag.data.isProject);
 
 <Base title="Jak2k" description="Jak2k's personal website">
   <p>
-    Hi, I'm <span itemprop="name">Jakob</span>, a <span itemprop="jobTitle">frontend developer</span> who loves working with Vue, nuxtjs & astro. I used
-    to work with <strong>React and NextJS</strong>, but I've since <strong
-      >switched over to Vue, Astro &amp; NuxtJS</strong
-    >. I'm currently a <strong>student</strong> and I use <strong
+    Hi, I'm <span itemprop="name">Jakob</span>, a <span itemprop="jobTitle"
+      >frontend developer</span
+    > who loves working with Vue, nuxtjs & astro. I used to work with <strong
+      >React and NextJS</strong
+    >, but I've since <strong>switched over to Vue, Astro &amp; NuxtJS</strong>.
+    I'm currently a <strong>student</strong> and I use <strong
       >Fedora Linux</strong
     > as my main operating system. I also enjoy working with <strong
       >TypeScript</strong
@@ -38,14 +40,13 @@ const projectTags = tags.filter((tag) => tag.data.isProject);
     <div max-w-80ch m-x-auto p-2.5 m-t-5>
       <h2 text-2xl>Posts</h2>
     </div>
-    <ul>
+    <ul flex-wrap grid grid-cols-1 gap-2.5 xsm:grid-cols-2>
       {
         sortedPosts.map((post) => (
           <li
-            max-w-80ch
+            w-full
             m-x-auto
             p-2.5
-            m-y-2.5
             border-1
             border-gray-300
             dark:border-gray-700

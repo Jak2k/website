@@ -35,5 +35,10 @@ export default defineConfig({
     {
       getCSS: ()=>"strong { text-shadow: 0 0 5px #0f0; }"
     }
-  ]
+  ],
+  theme: {
+    breakpoints: {
+      xsm: "790px",
+    }
+  }
 });
