@@ -1,7 +1,7 @@
 ---
 title: Hello World
 tags: [blog, hello world, blogging]
-featured: true
+featured: false
 lastUpdated: 2023-09-21T14:17:57Z
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Performance is Climate Protection
 tags: [blog, performance, climate protection, webdev, ssg, astro, nuxt]
-featured: true
+featured: false
 lastUpdated: 2023-11-11T22:26:46Z
 ---
 

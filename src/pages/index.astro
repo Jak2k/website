@@ -18,6 +18,8 @@ const sortedPosts = posts.sort((a, b) => {
   return bWeight - aWeight;
 });
 
+const filteredPosts = sortedPosts.filter((post) => post.data.featured);
+
 // get all tags, that are project tags
 const tags = await getCollection("tags");
 const projectTags = tags.filter((tag) => tag.data.isProject);
@@ -40,7 +42,7 @@ const projectTags = tags.filter((tag) => tag.data.isProject);
     </div>
     <ul>
       {
-        sortedPosts.map((post) => (
+        filteredPosts.map((post) => (
           <li
             max-w-80ch
             m-x-auto
