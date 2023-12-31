@@ -11,9 +11,9 @@ JavaScript is amazing trash. Rust too. Let me explain.
 
 JavaScript runs everywhere, it is easy to learn and you can do anything with it.
 
-TypeScript just makes it even better. You get powerfull typing and when it gets to complicated you can just opt out for a piece of code.
+TypeScript just makes it even better. You get powerfull typing and when it gets too complicated, you can just opt out for a piece of code.
 
-If you don't like one code style you can just pick a framwork you like and use it. There are so many options and thus you can always find something that fits your needs.
+If you don't like one code style, you can just pick a framework you like and use it. There are so many options and thus you can always find something that fits your needs.
 
 ## JavaScript and TypeScript are trash
 
@@ -25,17 +25,17 @@ JavaScript has many weird behaviours:
 - ES6 vs. CommonJS
 - `==` vs. `===`
 
-TypeScript is unmainainable. The typechecker just one huge js file. It is slow and you can't really do anything about it.
+TypeScript is unmaintainable. The typechecker is just one huge js file. It is slow and you can't really do anything about it.
 
-JavaScript is fast enough for most things but you can't really do anything about it. Just-in-time compilation exists but is not very reliable.
+JavaScript is fast enough for most things, but you can't really do anything about it. Just-in-time compilation exists but is not very reliable.
 
 ## Rust is amazing
 
 Rust is fast, safe and modern. You can do a lot of things with it and you have low-level control from a high-level language.
 
-It has a powerfull type system and a superiour alternative to garbage collection: Ownership.
+It has a powerfull type system and a superior alternative to garbage collection: Ownership.
 
-Enums are perfect for expressing states and for doing error handling. Exspecially in combination with pattern matching. You can build super cool state machines with it.
+Enums are perfect for expressing states and for doing error handling. Especially in combination with pattern matching. You can build super cool state machines with it.
 
 It is also possible to ship rust code to the browser with WebAssembly.
 
