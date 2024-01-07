@@ -89,6 +89,8 @@ const socials: { name: string; url: string; icon: string }[] = [
     <!--<ViewTransitions />-->
   </head>
   <body bg-white text-black dark:bg-black dark:text-white min-h-110vh>
+  <!-- Skip to content -->
+  <a href="#content" class="sr-only sr-only-focusable">Skip to content</a>
     <nav
       max-w-80ch
       m-x-auto
@@ -133,6 +135,7 @@ const socials: { name: string; url: string; icon: string }[] = [
       border-gray-300
       dark:border-gray-700
       rounded-2.5
+      id="content"
     >
       <h1 property="https://purl.org/dc/terms/title" text-5xl m-b-2.5>
         {title}
