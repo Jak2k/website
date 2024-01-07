@@ -1,0 +1,1 @@
+**WASM** (web-assembly) is a binary instruction format for a stack-based virtual machine. It is designed as a portable target for compilation of high-level languages like C/C++/Rust, enabling deployment on the web for client and server applications. It is supported by all major browsers and is a W3C standard.

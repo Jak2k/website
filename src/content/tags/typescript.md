@@ -1,0 +1,1 @@
+**TypeScript** is a typed superset of JavaScript that compiles to plain JavaScript. It allows to type code more strict than JavaScript, but because you can ignore it with `//@ts-ignore` it is technically just a bad linter.
