@@ -31,7 +31,7 @@ console.log(tags);
           dark:border-gray-700
           rounded-2.5
         >
-          <a href={`/tag/${tag}`}>
+          <a href={`/tag/${tag.replace(" (No additional info)", "")}`}>
             #{tag}
           </a>
         </li>
