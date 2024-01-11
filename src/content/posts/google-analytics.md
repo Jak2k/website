@@ -100,6 +100,32 @@ A very powerful analytics tool.
 - [DHL (German postal service)](https://www.dhl.de/)
 - [AIRBUS](https://www.airbus.com/)
 
+
+### umami
+
+Simple, fast and privacy-focused alternative to Google Analytics.
+
+[Website](https://umami.is/)
+
+#### Pros
+
+- Self-hostable (free forever)
+- GDPR compliant
+- Modern UI
+- Open source
+- Simple & easy to use
+
+#### Cons
+
+- No custom dashboards
+- Requires some technical knowledge to self-host
+
+#### Used by
+
+- [Hashnode](https://hashnode.com/)
+- [Excalidraw](https://excalidraw.com/)
+- [Perplexity AI](https://www.perplexity.ai/)
+
 ## What I use
 
 I use a matomo instance hosted by a German hosting provider. I get a weekly report via email and I can see the stats in the matomo dashboard. I also use the Google Search Console to see how my website performs in Google Search.
