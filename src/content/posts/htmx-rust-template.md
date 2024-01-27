@@ -1,11 +1,11 @@
 ---
-title: I made a template for htmx and Rust
+title: I made a template for HTMX and rust
 tags: [rust, htmx, webdev, actix-web, tera]
 featured: true
 lastUpdated: 2024-01-27T20:44:57Z
 ---
 
-I made a template for [**htmx**](https://htmx.org) and **Rust**. It uses [**actix-web**](https://actix.rs/) as a backend and [tera](https://keats.github.io/tera/) as a templating engine. It also includes a codetour so you can get started quickly.
+I made a template for [**htmx**](https://htmx.org) and **rust**. It uses [**actix-web**](https://actix.rs/) as a backend and [tera](https://keats.github.io/tera/) as a templating engine. It also includes a codetour so you can get started quickly.
 
 You can **find it on [GitHub](https://github.com/Jak2k/htmx-rust-tera-template)**. If you use it or have tried it, please **let me know what you think**!
 
