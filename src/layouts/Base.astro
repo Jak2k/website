@@ -30,11 +30,17 @@ const socials: { name: string; url: string; icon: string; me: boolean }[] = [
     icon: "mdi:github",
     me: true,
   },
-  { name: "RSS", url: "/rss.xml", icon: "mdi:rss", me: false },
   {
     name: "Discord DM",
     url: "https://discord.com/users/599098199655055360",
     icon: "mdi:discord",
+    me: false,
+  },
+  { name: "RSS", url: "/rss.xml", icon: "mdi:rss", me: false },
+  {
+    name: "Webmentions",
+    url: "https://webmention.io/api/mentions.html?token=qspyGqKi_4ivIoKre3OfwQ",
+    icon: "mdi:web",
     me: false,
   },
 ];
@@ -73,6 +79,7 @@ const socials: { name: string; url: string; icon: string; me: boolean }[] = [
       rel="pingback"
       href="https://webmention.io/jak2k.schwanenberg.name/xmlrpc"
     />
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {
