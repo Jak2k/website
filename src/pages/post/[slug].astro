@@ -52,7 +52,7 @@ const jsonld = {
     <!-- Iterate over tags -->
     {
       entry.data.tags.map((tag: string) => (
-        <a h-12 mx-2 my-6 href={`/tag/${tag.slug || tag}`}>
+        <a h-12 mx-2 my-6 href={`/tag/${tag.slug || tag}`} class="p-category">
           #{tag.slug || tag}
         </a>
       ))
