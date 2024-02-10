@@ -64,6 +64,16 @@ const socials: { name: string; url: string; icon: string; me: boolean }[] = [
     />
     {(prefetch || []).map((p) => <link rel="prefetch" href={p} />)}
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+
+    <link
+      rel="webmention"
+      href="https://webmention.io/jak2k.schwanenberg.name/webmention"
+    />
+    <link
+      rel="pingback"
+      href="https://webmention.io/jak2k.schwanenberg.name/xmlrpc"
+    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {
       jsonld && (
