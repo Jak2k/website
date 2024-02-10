@@ -3,7 +3,8 @@
 import { SEO } from "astro-seo";
 import { Icon } from "astro-icon";
 
-let { title, description, modifiedTime, tags, jsonld, prefetch } = Astro.props;
+let { title, description, modifiedTime, tags, jsonld, prefetch, isEntry } =
+  Astro.props;
 
 tags = tags || [];
 tags = tags.map((t) => t.slug || t);
@@ -139,8 +140,14 @@ const socials: { name: string; url: string; icon: string; me: boolean }[] = [
       dark:border-gray-700
       rounded-2.5
       id="content"
+      class={isEntry ? "h-entry" : ""}
     >
-      <h1 property="https://purl.org/dc/terms/title" text-5xl m-b-2.5>
+      <h1
+        property="https://purl.org/dc/terms/title"
+        class={isEntry ? "p-name" : ""}
+        text-5xl
+        m-b-2.5
+      >
         {title}
       </h1>
       <slot />
