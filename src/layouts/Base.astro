@@ -16,22 +16,25 @@ const routes: { path: string; title: string }[] = [
   { path: "/tag", title: "Tags" },
 ];
 
-const socials: { name: string; url: string; icon: string }[] = [
+const socials: { name: string; url: string; icon: string; me: boolean }[] = [
   {
     name: "Mastodon",
     url: "https://mastodontech.de/@Jak2k",
     icon: "mdi:mastodon",
+    me: true,
   },
   {
     name: "GitHub",
     url: "https://github.com/Jak2k",
     icon: "mdi:github",
+    me: true,
   },
-  { name: "RSS", url: "/rss.xml", icon: "mdi:rss" },
+  { name: "RSS", url: "/rss.xml", icon: "mdi:rss", me: false },
   {
     name: "Discord DM",
     url: "https://discord.com/users/599098199655055360",
     icon: "mdi:discord",
+    me: false,
   },
 ];
 ---
@@ -89,8 +92,8 @@ const socials: { name: string; url: string; icon: string }[] = [
     <!--<ViewTransitions />-->
   </head>
   <body bg-white text-black dark:bg-black dark:text-white min-h-110vh>
-  <!-- Skip to content -->
-  <a href="#content" class="sr-only sr-only-focusable">Skip to content</a>
+    <!-- Skip to content -->
+    <a href="#content" class="sr-only sr-only-focusable">Skip to content</a>
     <nav
       max-w-80ch
       m-x-auto
@@ -118,7 +121,7 @@ const socials: { name: string; url: string; icon: string }[] = [
             aria-label={s.name}
             class="m-r-2.5"
             target="_blank"
-            rel="noopener me"
+            rel={s.me ? "me noopener" : "noopener"}
           >
             <Icon name={s.icon} height="1.5em" width="1.5em" inline />
           </a>
