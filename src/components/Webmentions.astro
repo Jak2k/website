@@ -14,7 +14,17 @@ const TYPES = {
 };
 ---
 
-<div data-api-url={API_URL}>
+<div
+    data-api-url={API_URL}
+    max-w-80ch
+    m-x-auto
+    p-2.5
+    m-y-5
+    border-1
+    border-gray-300
+    dark:border-gray-700
+    rounded-2.5
+>
     <h2 text-2xl font-600>{wm.name} (Static)</h2>
     {
         wm.children.map((entry) => (
