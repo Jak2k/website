@@ -1,0 +1,92 @@
+---
+const { site } = Astro.props;
+
+const API_URL = `https://webmention.io/api/mentions.jf2?target=${site}`;
+
+const wm = await fetch(API_URL).then((res) => res.json());
+
+const TYPES = {
+    "in-reply-to": "Reply",
+    "like-of": "Like",
+    "repost-of": "Repost",
+    "bookmark-of": "Bookmark",
+    "mention-of": "Mention",
+};
+---
+
+<div data-api-url={API_URL}>
+    <h2 text-2xl font-600>{wm.name} (Static)</h2>
+    {
+        wm.children.map((entry) => (
+            <div m-l-4 prose>
+                {entry.author ? (
+                    entry.author.url ? (
+                        <h3>
+                            <a href="${author.url}">{entry.author.name}</a>
+                        </h3>
+                    ) : (
+                        <h3>{entry.author.name}</h3>
+                    )
+                ) : (
+                    ""
+                )}
+                <p>{entry.content.text || "No text"}</p>
+                <p>
+                    <a href="${entry.url}">
+                        {TYPES[entry["wm-property"]] || entry["wm-property"]}
+                    </a>{" "}
+                    received on
+                    {new Date(entry["wm-received"]).toLocaleString()}
+                </p>
+            </div>
+        ))
+    }
+</div>
+
+<script>
+    const TYPES = {
+        "in-reply-to": "Reply",
+        "like-of": "Like",
+        "repost-of": "Repost",
+        "bookmark-of": "Bookmark",
+        "mention-of": "Mention",
+    };
+
+    const TEMPLATE_AUTHOR = (author) => {
+        if (author.url)
+            return `<h3><a href="${author.url}">${author.name}</a></h3>`;
+
+        return `<h3>${author.name}</h3>`;
+    };
+
+    const TEMPLATE_ENTRY = (entry) => {
+        const type = TYPES[entry["wm-property"]] || entry["wm-property"];
+        return `<div m-l-4 prose>
+          ${entry.author ? TEMPLATE_AUTHOR(entry.author) : ""}
+          <p>${entry.content.text || "No text"}</p>
+          <p><a href="${entry.url}">${type}</a> received on ${new Date(entry["wm-received"]).toLocaleString()}</p>
+        </div>`;
+    };
+
+    const TEMPLATE_WM = (wm) => `<div>
+          <h2 text-2xl font-600>${wm.name}</h2>
+          ${wm.children.map(TEMPLATE_ENTRY).join("")}
+        </div>`;
+
+    // find element with data-api-url attribute
+    const el = document.querySelector("[data-api-url]");
+    // get the value of the data-api-url attribute
+    const url = el.getAttribute("data-api-url");
+    // fetch the data from the url
+    try {
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                // set the innerHTML of the element to the data
+                el.innerHTML = TEMPLATE_WM(data);
+            });
+    } catch (e) {
+        console.error(e);
+        el.innerHTML = "Error fetching webmentions";
+    }
+</script>
