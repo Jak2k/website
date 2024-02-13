@@ -98,22 +98,32 @@ const jsonld = {
   </script>
   <div slot="additional" max-w-80ch m-x-auto m-b-5>
     <Webmentions site={`https://jak2k.schwanenberg.name/post/${entry.slug}`} />
-    <script
-      src="https://giscus.app/client.js"
-      data-repo="jak2k/website"
-      data-repo-id="R_kgDOJrCLDA"
-      data-category="Comments"
-      data-category-id="DIC_kwDOJrCLDM4CW_j9"
-      data-mapping="specific"
-      data-term={entry.slug}
-      data-strict="1"
-      data-reactions-enabled="1"
-      data-emit-metadata="1"
-      data-input-position="top"
-      data-theme="preferred_color_scheme"
-      data-lang="en"
-      data-loading="lazy"
-      crossorigin="anonymous"
-      async></script>
+    <div
+      max-w-80ch
+      m-x-auto
+      m-y-5
+      border-1
+      border-gray-300
+      dark:border-gray-700
+      rounded-2.5
+    >
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="jak2k/website"
+        data-repo-id="R_kgDOJrCLDA"
+        data-category="Comments"
+        data-category-id="DIC_kwDOJrCLDM4CW_j9"
+        data-mapping="specific"
+        data-term={entry.slug}
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async></script>
+    </div>
   </div>
 </Base>
