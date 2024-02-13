@@ -16,8 +16,5 @@ export default defineConfig({
     port: 3000
   },
   site: "https://jak2k.schwanenberg.name",
-  adapter: vercel(),
-  redirects: {
-    "/.well-known/webfinger": "/.well-known/webfinger.json",
-  }
+  adapter: vercel()
 });
