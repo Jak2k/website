@@ -42,7 +42,7 @@ const TYPES = {
                 )}
                 <p>{entry.content.text || "No text"}</p>
                 <p>
-                    <a href="${entry.url}">
+                    <a href={entry.url}>
                         {TYPES[entry["wm-property"]] || entry["wm-property"]}
                     </a>{" "}
                     received on
