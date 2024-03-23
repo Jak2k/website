@@ -40,7 +40,7 @@ const TYPES = {
                 ) : (
                     ""
                 )}
-                <p>{entry.content.text || "No text"}</p>
+                <p>{entry.content?.text || "No text"}</p>
                 <p>
                     <a href={entry.url}>
                         {TYPES[entry["wm-property"]] || entry["wm-property"]}
@@ -73,7 +73,7 @@ const TYPES = {
         const type = TYPES[entry["wm-property"]] || entry["wm-property"];
         return `<div m-l-4 prose>
           ${entry.author ? TEMPLATE_AUTHOR(entry.author) : ""}
-          <p>${entry.content.text || "No text"}</p>
+          <p>${entry.content?.text || "No text"}</p>
           <p><a href="${entry.url}">${type}</a> received on ${new Date(entry["wm-received"]).toLocaleString()}</p>
         </div>`;
     };
