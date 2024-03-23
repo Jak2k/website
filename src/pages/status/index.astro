@@ -5,6 +5,8 @@ import StatusC from "../../components/Status.astro";
 
 const statuses = await db.select().from(Status);
 
+export const prerender = false;
+
 function formatDateTime(timestamp) {
   const formattedDate = new Date(timestamp).toLocaleDateString("en-US", {
     year: "numeric",
