@@ -1,0 +1,44 @@
+---
+import { db, Status } from "astro:db";
+import Base from "../../layouts/Base.astro";
+import StatusC from "../../components/Status.astro";
+
+const statuses = await db.select().from(Status);
+
+function formatDateTime(timestamp) {
+  const formattedDate = new Date(timestamp).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  const formattedTime = new Date(timestamp).toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  return `${formattedDate} | ${formattedTime}`;
+}
+
+// sort by timestamp (newest first)
+const sortedStatuses = statuses.sort((a, b) => b.timestamp - a.timestamp);
+---
+
+<Base title="Statuses" description="All statuses by Jak2k">
+  <ul slot="additional">
+    {
+      statuses.map((post) => (
+        <li
+          max-w-80ch
+          m-x-auto
+          p-2.5
+          m-y-2.5
+          border-1
+          border-gray-300
+          dark:border-gray-700
+          rounded-2.5
+        >
+          <StatusC entry={post} condensed={true} />
+        </li>
+      ))
+    }
+  </ul>
+</Base>

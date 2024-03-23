@@ -1,0 +1,41 @@
+---
+import { db, Status, eq } from "astro:db";
+import Base from "../../layouts/Base.astro";
+import Webmentions from "../../components/Webmentions.astro";
+import StatusC from "../../components/Status.astro";
+
+export const prerender = false;
+
+const id = Number(Astro.params.id);
+
+const entry = (
+  await db.select().from(Status).where(eq(Status.id, id)).limit(1)
+)[0];
+
+function formatDateTime(timestamp: Date) {
+  const formattedDate = new Date(timestamp).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  const formattedTime = new Date(timestamp).toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  return `${formattedDate} | ${formattedTime}`;
+}
+
+const formattedDateTime = formatDateTime(entry.timestamp);
+---
+
+<Base
+  title={`Post from ${formatDateTime(entry.timestamp)}`}
+  description={"Status by Jak2k"}
+  isEntry={false}
+>
+  <StatusC entry={entry} />
+  <Webmentions
+    site={`https://jak2k.schwanenberg.name/status/${entry.id}`}
+    slot="additional"
+  />
+</Base>
