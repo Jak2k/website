@@ -5,6 +5,14 @@ import Base from "../../layouts/Base.astro";
 export const prerender = false;
 
 if (Astro.request.method === "POST") {
+    // get ASTRO_USER_SECRET from the environment variables
+    if (
+        Astro.request.headers.get("Authorization") !==
+        `Bearer ${process.env.ASTRO_USER_SECRET}`
+    ) {
+        return new Response("Unauthorized", { status: 401 });
+    }
+
     const formData = await Astro.request.formData();
     const text = formData.get("text");
     const timestamp = new Date();
@@ -41,4 +49,32 @@ if (Astro.request.method === "POST") {
 
         <button type="submit">Submit</button>
     </form>
+
+    <!-- Auth -->
+    <script type="module">
+        const form = document.querySelector("form");
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch(location.pathname, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("ASTRO_USER_SECRET")}`,
+                },
+                body: formData,
+            });
+            if (response.ok) {
+                alert("Post created!");
+
+                // clear form
+                form.reset();
+            } else {
+                alert("Failed to create post");
+
+                // show input to enter ASTRO_USER_SECRET
+                const ASTRO_USER_SECRET = prompt("Enter ASTRO_USER_SECRET");
+                localStorage.setItem("ASTRO_USER_SECRET", ASTRO_USER_SECRET);
+            }
+        });
+    </script>
 </Base>
