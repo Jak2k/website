@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pnpx @divriots/jampack ./dist",
     "preview": "astro preview",
     "astro": "astro"
   },
