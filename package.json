@@ -5,6 +5,6 @@
   },
   "scripts": {
     "dev": "eleventy --input=website --serve",
-    "build": "eleventy --input=website"
+    "build": "eleventy --input=website && pnpx @divriots/jampack ./_site"
   }
 }
