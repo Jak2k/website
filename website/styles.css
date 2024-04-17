@@ -1,0 +1,66 @@
+:root {
+  --text-color: black;
+  --background-color: white;
+  --link-color: blue;
+  --link-visited-color: purple;
+  font-width: 100%;
+  font-family: sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --background-color: black;
+    --link-color: lightblue;
+    --link-visited-color: pink;
+  }
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--link-visited-color);
+}
+
+/* limit content width to a comfortable reading width */
+nav,
+main,
+aside,
+footer {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30vh;
+}
+
+strong {
+  text-shadow: 0 0 0.5em white;
+}
+
+/* Skip to content (inspired by: https://css-tricks.com/how-to-create-a-skip-to-content-link/) */
+#skip-to-content {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+#skip-to-content:focus {
+  transform: translateY(0%);
+}
+
+footer {
+  text-align: center;
+}

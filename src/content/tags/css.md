@@ -1,1 +1,0 @@
-**CSS** (Cascading Style Sheets) is a fundamental technology used in web development to control the presentation and styling of web content. It works alongside HTML (Hypertext Markup Language) to define how elements and web pages should look and be displayed in web browsers. It is also used for styling GTK app and svg files.

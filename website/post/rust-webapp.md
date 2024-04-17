@@ -1,7 +1,7 @@
 ---
 title: How to write a webapp in Rust
 tags: [rust, webdev, webapp, wasm]
-featured: true
+featured: false
 lastUpdated: 2023-12-18T18:19:11Z
 ---
 

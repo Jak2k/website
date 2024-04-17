@@ -1,7 +1,7 @@
 ---
 title: I made a template for HTMX and rust
 tags: [rust, htmx, webdev, actix-web, tera]
-featured: true
+featured: false
 lastUpdated: 2024-01-27T20:44:57Z
 ---
 

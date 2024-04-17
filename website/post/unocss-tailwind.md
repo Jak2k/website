@@ -1,7 +1,7 @@
 ---
 title: Why you should use UnoCSS instead of Tailwind
 tags: [unocss, tailwind, css, webdev]
-featured: true
+featured: false
 lastUpdated: 2023-09-25T16:52:57Z
 ---
 

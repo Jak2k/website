@@ -1,7 +1,7 @@
 ---
 title: JavaScript is amazing trash. Rust too.
 tags: [webdev, javascript, rust, typescript, webassembly, coding]
-featured: true
+featured: false
 lastUpdated: 2023-11-19T15:38:40Z
 ---
 

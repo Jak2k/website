@@ -1,7 +1,7 @@
 ---
 title: A Headless CMS is Bullshit for your developer blog
 tags: [blog, blogging, headless-cms, webdev, cms]
-featured: true
+featured: false
 lastUpdated: 2023-12-18T17:59:19Z
 ---
 
