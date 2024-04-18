@@ -325,19 +325,6 @@ export default class WebMentions extends LitElement {
     } = webmention;
     let url = !useAuthorUrl ? webmention.url : webmention.author.url;
 
-    let avatar = photo
-      ? html`
-          <img
-            class="u-photo"
-            loading="lazy"
-            decoding="async"
-            width="48"
-            height="48"
-            src="${photo}"
-          />
-        `
-      : html`<span class="face--empty">${name.charAt(0) || "WM"}</span>`;
-
     return html`
       <a
         class="webmention__author h-card u-url link-u-exempt"
@@ -346,7 +333,7 @@ export default class WebMentions extends LitElement {
         target="_blank"
         rel="noopener noreferrer"
       >
-        ${avatar}
+        ${name}
       </a>
     `;
   }
@@ -412,7 +399,7 @@ export default class WebMentions extends LitElement {
         </button>
         <ol class="webmentions--feed" style="display: none;" role="list">
           ${webmentions.map(
-            (mention) => html`
+      (mention) => html`
               <li class="webmention h-cite">
                 ${WebMentions.renderAuthorProfile(mention, true)}
                 <div class="webmention__header">
@@ -423,7 +410,7 @@ export default class WebMentions extends LitElement {
                 </div>
               </li>
             `
-          )}
+    )}
         </ol>
       </div>
     `;
@@ -436,7 +423,7 @@ export default class WebMentions extends LitElement {
     return html`
       <ol class="webmentions--feed webmentions__preview" role="list">
         ${previewMentions.map(
-          (mention) => html`
+      (mention) => html`
             <li class="webmention h-cite">
               ${WebMentions.renderAuthorProfile(mention, true)}
               <div class="webmention__header">
@@ -447,7 +434,7 @@ export default class WebMentions extends LitElement {
               </div>
             </li>
           `
-        )}
+    )}
       </ol>
       ${WebMentions.renderRemainingFeed(remainingMentions)}
     `;
@@ -457,10 +444,10 @@ export default class WebMentions extends LitElement {
     return html`
       <ol class="webmentions--facepile" role="list">
         ${webmentions.map(
-          (mention) => html`
+      (mention) => html`
             <li class="webmention">${this.renderAuthorProfile(mention)}</li>
           `
-        )}
+    )}
       </ol>
     `;
   }
