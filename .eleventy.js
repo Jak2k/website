@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const shikiTwoslash = require("eleventy-plugin-shiki-twoslash");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("website/styles.css");
@@ -15,4 +16,9 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(shikiTwoslash, { theme: "nord" });
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://example.com",
+    },
+  });
 };

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@divriots/jampack": "^0.24.0",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "eleventy-plugin-shiki-twoslash": "^1.1.3"
   }
 }
