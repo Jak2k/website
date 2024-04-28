@@ -11,11 +11,7 @@ const additionalA = document.querySelector("[data-additional-a]");
 const additionalB = document.querySelector("[data-additional-b]");
 
 function onAnswerChange(event) {
-  console.log("Answer changed", event.target.name, event.target.value);
-
   answers.set(event.target.name, event.target.value);
-
-  console.log("Answers", answers);
 
   result = calculateResult();
 
@@ -52,12 +48,8 @@ function calculateResult() {
     results[value]++;
   });
 
-  console.log("Results", results);
-
   const result =
     results.a === results.b ? "tie" : results.a > results.b ? "a" : "b";
-
-  console.log("Result", result);
 
   return result;
 }
@@ -91,5 +83,3 @@ questions.forEach((question) => {
     input.addEventListener("change", onAnswerChange);
   });
 });
-
-console.log("Initialized", questions.length, "questions");
