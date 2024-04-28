@@ -12,6 +12,9 @@ description: No description provided.
     <meta name="description" content="{{ description }}">
     <link rel="stylesheet" href="/styles.css">
     <script src="/webmentions.js" type="module" defer></script>
+    {% if abquiz %}
+    <script src="/ab-quiz.js" type="module" defer></script>
+    {% endif %}
 
     <link rel="webmention" href="https://webmention.io/jak2k.schwanenberg.name/webmention" />
     <link rel="pingback" href="https://webmention.io/jak2k.schwanenberg.name/xmlrpc" />

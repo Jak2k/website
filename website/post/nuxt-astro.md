@@ -3,12 +3,16 @@ title: Nuxt vs. Astro - Interactive decision helper
 tags: [nuxt, astro, vue, webdev, jamstack, ssg, interactive-blog]
 featured: true
 lastUpdated: 2023-10-29T20:32:57Z
-isInteractive: decision
+abquiz: true
 ---
 
 **Astro** and **nuxt** are both great tools for building websites. But which one should you use? This is an **interactive post** to help you decide. I will explain the differences between the two and then ask you a few questions to help you decide which one is right for you. **At the end**, I will give you a **recommendation based on your answers**.
 
-import AstroVue from "../../components/interactive/decision/AstroVue.astro";
+<noscript>
+
+This is an interactive post. To see the questions and get a recommendation, please **enable JavaScript**.
+
+</noscript>
 
 ## Rendering
 
@@ -16,12 +20,7 @@ import AstroVue from "../../components/interactive/decision/AstroVue.astro";
 
 **Nuxt** is a **full-stack framework** for **vue**. ([Read why I switched to vue](/post/switch-react-vue)) This means that it can render your website on the server or client. This result in good performance, but astro is still faster. If your data updates often, then you should use nuxt, as it provides many tools to work with dynamic data.
 
-<AstroVue
-  nuxt="The content changes every few minutes or is user-generated and should be updated in real-time."
-  astro="The content only changes every few days or longer."
-  question="How often does the content change?"
-  slug="contentFrequency"
-/>
+<div class="ab-question" data-a="The content changes every few minutes or is user-generated and should be updated in real-time." data-b="The content only changes every few days or longer." data-question="How often does the content change?" data-slug="contentFrequency"></div>
 
 ## Content
 
@@ -29,12 +28,7 @@ import AstroVue from "../../components/interactive/decision/AstroVue.astro";
 
 **Nuxt** is not to great for content. You can do it too, but for example you can't use a content directory and generate a rss feed for it. Nuxt is better for dynamic data from an api. But when you use an api it provides you with many tools to work with it.
 
-<AstroVue
-  nuxt="I want to use an api to get my content."
-  astro="I want to use markdown files to store my content next to my code."
-  question="How do you want to store your content?"
-  slug="contentStorage"
-/>
+<div class="ab-question" data-a="I want to use an api to get my content." data-b="I want to use markdown files to store my content next to my code." data-question="How do you want to store your content?" data-slug="contentStorage"></div>
 
 ## Development tools.
 
@@ -42,12 +36,7 @@ import AstroVue from "../../components/interactive/decision/AstroVue.astro";
 
 **Nuxt** has an aswesome in-browser devtools. You can see all your stores, components, routes and more. You can also use the dev server with hot reloading. If you want to **add an integration** you **just select it in the devtools** and it will be added to your project. These devtools are really awesome and make developing with nuxt a lot easier. You can also throw away postman, because nuxt has a built-in api explorer.
 
-<AstroVue
-  nuxt="I want to use the awesome devtools as I want to develop a complex website."
-  astro="I don't need such devtools for my project."
-  question="Do you want to use devtools?"
-  slug="devtools"
-/>
+<div class="ab-question" data-a="I want to use the awesome devtools as I want to develop a complex website." data-b="I don't need such devtools for my project." data-question="Do you want to use powerful devtools?" data-slug="devtools"></div>
 
 ## UI Frameworks
 
@@ -55,12 +44,7 @@ import AstroVue from "../../components/interactive/decision/AstroVue.astro";
 
 **Nuxt** only supports **vue**. This is also great because you can use the **vue ecosystem** and you can mix your components. **In astro you can't embed a react component in a vue component**. In nuxt all your components are vue.
 
-<AstroVue
-  nuxt="💚 I want to use vue and the vue ecosystem. 💚"
-  astro="I want to use a different framework."
-  question="Which ui framework do you want to use?"
-  slug="framework"
-/>
+<div class="ab-question" data-a="I want to use vue and the vue ecosystem." data-b="I want to use a different framework." data-question="Which ui framework do you want to use?" data-slug="framework"></div>
 
 ## Performance
 
@@ -68,21 +52,16 @@ As I said, **astro** is statically rendered. This means that it is **very fast**
 
 In **nuxt** you usually use **server-side rendering**. This means that it is not as fast as astro and has a larger bundle size. There is also lots of code running on the client, which can slow down your website. Nuxt also supports static site generation, but it is not as good as astro and you lose the ability to use dynamic data on that page. That may be fine for a landing page, but not for an entire website.
 
-<AstroVue
-  nuxt="I want to use server-side rendering. (Fast)"
-  astro="I want to use static site generation. (Very fast)"
-  question="Do you want to use server-side rendering or static site generation?"
-  slug="performance"
-/>
+<div class="ab-question" data-a="I want to use server-side rendering." data-b="I want to use static site generation." data-question="Do you want to use server-side rendering or static site generation?" data-slug="performance"></div>
 
 ## Conclusion
 
 <div data-result-one="" hidden>
 
-Based on your answers, I recommend that you use **<span data-fw=""></span>**. It is a **great tool** for building websites and has many features that will make your life easier. You may also change your answers and see if you get a different result.
+Based on your answers, I recommend that you use **<span data-fw="Nuxt|Astro"></span>**. It is a **great tool** for building websites and has many features that will make your life easier. You may also change your answers and see if you get a different result.
 
-<span data-get-started-astro="" hidden>Aggregata wrote a nice introduction on how to <a href="https://aggregata.de/en/blog/astro/astro-an-introduction-to-your-next-project/"><strong>get started with Astro</strong></a>. <strong>They use Tailwind CSS</strong>, but you can also use UnoCSS. <a href="/post/unocss-tailwind"><strong>I explain why you should use UnoCSS</strong></a> in another article.</span>
-<span data-get-started-nuxt="" hidden>Nuxt has a great <a href="https://nuxt.com/docs/getting-started/installation">getting started guide</a>.</span>
+<span data-additional-a hidden>Aggregata wrote a nice introduction on how to <a href="https://aggregata.de/en/blog/astro/astro-an-introduction-to-your-next-project/"><strong>get started with Astro</strong></a>.</span>
+<span data-additional-b hidden>Nuxt has a great <a href="https://nuxt.com/docs/getting-started/installation">getting started guide</a>.</span>
 
 </div>
 
