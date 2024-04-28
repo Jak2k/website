@@ -8,6 +8,6 @@
     "build": "eleventy --input=website && jampack ./_site"
   },
   "dependencies": {
-    "@divriots/jampack": "^0.23.4"
+    "@divriots/jampack": "^0.24.0"
   }
 }
