@@ -1,75 +1,75 @@
-const questions = document.querySelectorAll('.ab-question');
+const questions = document.querySelectorAll(".ab-question");
 
 const answers = new Map();
 let result = "";
 
-const oneResult = document.querySelector('[data-result-one]');
-const noResult = document.querySelector('[data-result-no]');
-const tieResult = document.querySelector('[data-result-equal]');
-const fw = document.querySelector('[data-fw]');
-const additionalA = document.querySelector('[data-additional-a]');
-const additionalB = document.querySelector('[data-additional-b]');
+const oneResult = document.querySelector("[data-result-one]");
+const noResult = document.querySelector("[data-result-no]");
+const tieResult = document.querySelector("[data-result-equal]");
+const fw = document.querySelector("[data-fw]");
+const additionalA = document.querySelector("[data-additional-a]");
+const additionalB = document.querySelector("[data-additional-b]");
 
 function onAnswerChange(event) {
-    console.log("Answer changed", event.target.name, event.target.value);
+  console.log("Answer changed", event.target.name, event.target.value);
 
-    answers.set(event.target.name, event.target.value);
+  answers.set(event.target.name, event.target.value);
 
-    console.log("Answers", answers);
+  console.log("Answers", answers);
 
-    result = calculateResult();
+  result = calculateResult();
 
-    if (result === 'tie') {
-        oneResult.hidden = true;
-        noResult.hidden = true;
-        tieResult.hidden = false;
-    } else {
-        oneResult.hidden = false;
-        noResult.hidden = true;
-        tieResult.hidden = true;
-    }
+  if (result === "tie") {
+    oneResult.hidden = true;
+    noResult.hidden = true;
+    tieResult.hidden = false;
+  } else {
+    oneResult.hidden = false;
+    noResult.hidden = true;
+    tieResult.hidden = true;
+  }
 
-    const [a, b] = fw.getAttribute('data-fw').split('|');
+  const [a, b] = fw.getAttribute("data-fw").split("|");
 
-    if (result === 'a') {
-        fw.innerHTML = a;
-        additionalA.hidden = false;
-        additionalB.hidden = true;
-    } else if (result === 'b') {
-        fw.innerHTML = b;
-        additionalA.hidden = true;
-        additionalB.hidden = false;
-    }
+  if (result === "a") {
+    fw.innerHTML = a;
+    additionalA.hidden = false;
+    additionalB.hidden = true;
+  } else if (result === "b") {
+    fw.innerHTML = b;
+    additionalA.hidden = true;
+    additionalB.hidden = false;
+  }
 }
 
 function calculateResult() {
-    const results = {
-        a: 0,
-        b: 0,
-    };
+  const results = {
+    a: 0,
+    b: 0,
+  };
 
-    answers.forEach((value, key) => {
-        results[value]++;
-    });
+  answers.forEach((value, key) => {
+    results[value]++;
+  });
 
-    console.log("Results", results);
+  console.log("Results", results);
 
-    const result = results.a === results.b ? 'tie' : results.a > results.b ? 'a' : 'b';
+  const result =
+    results.a === results.b ? "tie" : results.a > results.b ? "a" : "b";
 
-    console.log("Result", result);
+  console.log("Result", result);
 
-    return result;
-
+  return result;
 }
 
 questions.forEach((question) => {
-    // get data attributes
-    const questionText = question.getAttribute('data-question');
-    const answerA = question.getAttribute('data-a');
-    const answerB = question.getAttribute('data-b');
-    const slug = question.getAttribute('data-slug');
+  // get data attributes
+  const questionText = question.getAttribute("data-question");
+  const answerA = question.getAttribute("data-a");
+  const answerB = question.getAttribute("data-b");
+  const slug = question.getAttribute("data-slug");
 
-    const html = `
+  const html = `
     <h3>${questionText}</h3>
     <div class="ab-answers">
       <div class="ab-answer">
@@ -84,12 +84,12 @@ questions.forEach((question) => {
     </div>
     `;
 
-    question.innerHTML = html;
+  question.innerHTML = html;
 
-    // register event listeners
-    document.querySelectorAll(`input[name="${slug}"]`).forEach((input) => {
-        input.addEventListener('change', onAnswerChange);
-    });
+  // register event listeners
+  document.querySelectorAll(`input[name="${slug}"]`).forEach((input) => {
+    input.addEventListener("change", onAnswerChange);
+  });
 });
 
 console.log("Initialized", questions.length, "questions");

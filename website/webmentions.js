@@ -1,6 +1,7 @@
 const site = "https://jak2k.schwanenberg.name" + window.location.pathname;
 
-const API_URL = (site) => `https://webmention.io/api/mentions.jf2?target=${site}`;
+const API_URL = (site) =>
+  `https://webmention.io/api/mentions.jf2?target=${site}`;
 
 const TYPES = {
   "in-reply-to": "Reply",
@@ -11,8 +12,7 @@ const TYPES = {
 };
 
 const TEMPLATE_AUTHOR = (author) => {
-  if (author.url)
-    return `<h3><a href="${author.url}">${author.name}</a></h3>`;
+  if (author.url) return `<h3><a href="${author.url}">${author.name}</a></h3>`;
 
   return `<h3>${author.name}</h3>`;
 };
@@ -20,11 +20,16 @@ const TEMPLATE_AUTHOR = (author) => {
 const TEMPLATE_ENTRY = (entry) => {
   const type = TYPES[entry["wm-property"]] || entry["wm-property"];
 
-  if (entry["wm-property"] === "like-of" || entry["wm-property"] === "repost-of") {
+  if (
+    entry["wm-property"] === "like-of" ||
+    entry["wm-property"] === "repost-of"
+  ) {
     return ``;
   }
 
-  const escapedText = entry.content?.text?.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const escapedText = entry.content?.text
+    ?.replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 
   return `<div class="comment">
       ${entry.author ? TEMPLATE_AUTHOR(entry.author) : ""}
@@ -34,8 +39,12 @@ const TEMPLATE_ENTRY = (entry) => {
 };
 
 const TEMPLATE_WM = (wm) => {
-  const likeCount = wm.children.filter((c) => c["wm-property"] === "like-of").length;
-  const repostCount = wm.children.filter((c) => c["wm-property"] === "repost-of").length;
+  const likeCount = wm.children.filter(
+    (c) => c["wm-property"] === "like-of",
+  ).length;
+  const repostCount = wm.children.filter(
+    (c) => c["wm-property"] === "repost-of",
+  ).length;
 
   return `
   <span class="like-count">${likeCount} Likes</span> <span class="repost-count">${repostCount} Reposts</span>
@@ -51,7 +60,7 @@ try {
   // site with trailing slash
   const site2 = site1 + "/";
 
-  const data1 = await fetch(API_URL(site1)).then((res) => res.json())
+  const data1 = await fetch(API_URL(site1)).then((res) => res.json());
   const data2 = await fetch(API_URL(site2)).then((res) => res.json());
 
   const data = {
