@@ -1,0 +1,28 @@
+---
+layout: base.njk
+---
+
+<main id="content" class="h-entry">
+  <h1 class="p-name">{{ title }}</h1>
+
+  {% for tag in tags %}
+    <a href="/tag/{{ tag }}" class="p-category">#{{ tag }}</a>
+  {% endfor %}
+  <div class="e-content">
+    {{ content }}
+
+    <p>
+      Thanks for reading! If you have any questions or comments, comment below. I'd love to hear from you! You may also fix
+      errors or suggest changes in the
+      <a href="https://github.com/Jak2k/website">GitHub repo</a>.
+    </p>
+    <p>
+      <a
+        class="p-author"
+        rel="author me"
+        href="https://jak2k.schwanenberg.name">
+        Jak2k
+      </a>
+    </p>
+  </div>
+</main>

@@ -1,29 +1,15 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
+  },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build && pnpx @divriots/jampack ./dist",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "eleventy --input=website --serve",
+    "build": "eleventy --input=website && jampack ./_site"
   },
   "dependencies": {
-    "@astrojs/db": "^0.8.5",
-    "@astrojs/mdx": "^2.2.0",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/vercel": "^7.3.6",
-    "@astrojs/vue": "^4.0.9",
-    "astro": "^4.5.4",
-    "astro-seo": "^0.8.3",
-    "astro-sitemap": "^1.0.0",
-    "vue": "^3.4.21"
-  },
-  "devDependencies": {
-    "@iconify-json/mdi": "^1.1.64",
-    "@unocss/reset": "^0.58.6",
-    "astro-icon": "^1.1.0",
-    "unocss": "^0.58.6"
+    "@divriots/jampack": "^0.24.0",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
+    "eleventy-plugin-shiki-twoslash": "^1.1.3"
   }
 }
