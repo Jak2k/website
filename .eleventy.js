@@ -18,7 +18,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(shikiTwoslash, { theme: "nord" });
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
-      hostname: "https://example.com",
+      hostname: "https://jak2k.schwanenberg.name",
     },
   });
 };
