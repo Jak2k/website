@@ -6,6 +6,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("website/webmentions.js")
   eleventyConfig.addPassthroughCopy("website/ab-quiz.js")
   eleventyConfig.addPassthroughCopy("website/.well-known/**/*")
+
+  eleventyConfig.addPassthroughCopy("website/BingSiteAuth.xml")
+  eleventyConfig.addPassthroughCopy("website/google7c5903cf6acc20cf.html")
+
   eleventyConfig.addCollection("post", function (collection) {
     return collection.getFilteredByGlob("website/post/**/*.md");
   });
