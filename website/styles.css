@@ -72,3 +72,7 @@ li {
 .comment {
   margin-left: 1em;
 }
+
+pre {
+  padding: 1em;
+}
