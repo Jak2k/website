@@ -7,10 +7,6 @@ lastUpdated: 2023-10-25T16:17:42Z
 
 I enjoyed using React. I really liked it. But then I tried Vue and nuxt. I almost cried, for real. Developing with Vue is so much easier. **React is legacy code.** Here is why.
 
-import StateDemo from "../../components/demo/vue/StateDemo.vue";
-import ModelDemo from "../../components/demo/vue/ModelDemo.vue";
-import Demo from "../../components/Demo.astro";
-
 ## SFCs are awesome
 
 In a Vue-file you don't need to do weird stuff with `.map()` or conditional expressions in JSX placeholders. For conditional rendering you can just use the `v-if` and `v-for` html attributes. It's so much easier to read and understand. Oh, and I don't have weird issues with missing brackets anymore. Else-if is also much easier to do.
@@ -50,7 +46,7 @@ and
   {items.map((item) => (
     <h1 key={item.id}>{item.name}</h1>
   ))}
-
+</div>
 ```
 
 ## Vue has an awesome ecosystem
@@ -165,9 +161,11 @@ const complexUserObject = reactive({ name: "John", age: 18 });
 </template>
 ```
 
-<Demo>
-  <StateDemo client:load />
-</Demo>
+<div class="note">
+
+The demo has been removed because it don't use Vue on this website anymore. [Read more](/post/11ty)
+
+</div>
 
 - `ref` is used for primitive values (like numbers, strings, booleans)
 - `reactive` is used for objects and arrays (including nested objects and arrays)
@@ -190,9 +188,11 @@ const name = ref("");
 </template>
 ```
 
-<Demo>
-  <ModelDemo client:load />
-</Demo>
+<div class="note">
+
+The demo has been removed because it don't use Vue on this website anymore. [Read more](/post/11ty)
+
+</div>
 
 ## Why **React** is legacy code
 
