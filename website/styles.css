@@ -75,3 +75,7 @@ li {
 pre {
   padding: 1em;
 }
+
+a[data-green-link="true"] {
+  text-decoration: underline solid 2px green;
+}

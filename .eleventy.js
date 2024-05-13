@@ -1,6 +1,7 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const shikiTwoslash = require("eleventy-plugin-shiki-twoslash");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
+const greenLinks = require("eleventy-plugin-green-links");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("website/styles.css");
@@ -21,4 +22,5 @@ module.exports = function (eleventyConfig) {
       hostname: "https://jak2k.schwanenberg.name",
     },
   });
+  eleventyConfig.addPlugin(greenLinks);
 };

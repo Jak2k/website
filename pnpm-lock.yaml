@@ -11,6 +11,9 @@ dependencies:
   '@quasibit/eleventy-plugin-sitemap':
     specifier: ^2.2.0
     version: 2.2.0
+  eleventy-plugin-green-links:
+    specifier: ^0.1.5
+    version: 0.1.5
   eleventy-plugin-shiki-twoslash:
     specifier: ^1.1.3
     version: 1.1.3
@@ -828,6 +831,14 @@ packages:
       '@swc/counter': 0.1.3
     dev: false
 
+  /@tgwf/co2@0.12.2:
+    resolution: {integrity: sha512-TcOtska9jKCRNJ+sEXa+s3ze36Ts5sS/S2sSIk7KR2UmPctANcKyTKusYBfmrXmkPKaxBc1QxGvFvBcneI1/Yw==}
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@tokenizer/token@0.3.0:
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
     dev: false
@@ -1292,6 +1303,10 @@ packages:
       css-tree: 2.2.1
     dev: false
 
+  /cssom@0.5.0:
+    resolution: {integrity: sha512-iKuQcq+NdHqlAcwUY0o/HL69XQrUaQdMjmStJ8JFmUaiiQErlhrmuigkg/CU4E2J0IyUKUrMAgl36TvN67MqTw==}
+    dev: false
+
   /deasync@0.1.29:
     resolution: {integrity: sha512-EBtfUhVX23CE9GR6m+F8WPeImEE4hR/FW9RkK0PMl9V1t283s0elqsTD8EZjaKX28SY1BW2rYfCgNsAYdpamUw==}
     engines: {node: '>=0.11.0'}
@@ -1433,6 +1448,15 @@ packages:
 
   /electron-to-chromium@1.4.750:
     resolution: {integrity: sha512-9ItEpeu15hW5m8jKdriL+BQrgwDTXEL9pn4SkillWFu73ZNNNQ2BKKLS+ZHv2vC9UkNhosAeyfxOf/5OSeTCPA==}
+    dev: false
+
+  /eleventy-plugin-green-links@0.1.5:
+    resolution: {integrity: sha512-0EmFiKuu2s/GGS21sLsPQ6l3I4Dt5qwlBP/uNxgA50c5PMan+NyUorCRBqIvpfMuwa1N74Z3UcC4P6SoCNBvZw==}
+    dependencies:
+      '@tgwf/co2': 0.12.2
+      linkedom: 0.14.26
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /eleventy-plugin-shiki-twoslash@1.1.3:
@@ -1764,6 +1788,10 @@ packages:
     dependencies:
       function-bind: 1.1.2
     dev: true
+
+  /html-escaper@3.0.3:
+    resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
+    dev: false
 
   /html-minifier-terser@7.2.0:
     resolution: {integrity: sha512-tXgn3QfqPIpGl9o+K5tpcj3/MN4SfLtsx2GWwBC3SSd0tXQGyF3gsSqad8loJgKZGM3ZxbYDd5yhiBIdWpmvLA==}
@@ -2097,6 +2125,16 @@ packages:
       lightningcss-linux-x64-gnu: 1.24.1
       lightningcss-linux-x64-musl: 1.24.1
       lightningcss-win32-x64-msvc: 1.24.1
+    dev: false
+
+  /linkedom@0.14.26:
+    resolution: {integrity: sha512-mK6TrydfFA7phrnp+1j57ycBwFI5bGSW6YXlw9acHoqF+mP/y+FooEYYyniOt5Ot57FSKB3iwmnuQ1UUyNLm5A==}
+    dependencies:
+      css-select: 5.1.0
+      cssom: 0.5.0
+      html-escaper: 3.0.3
+      htmlparser2: 8.0.2
+      uhyphen: 0.2.0
     dev: false
 
   /linkify-it@4.0.1:
@@ -3136,6 +3174,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /uhyphen@0.2.0:
+    resolution: {integrity: sha512-qz3o9CHXmJJPGBdqzab7qAYuW8kQGKNEuoHFYrBwV6hWIMcpAmxDLXojcHfFr9US1Pe6zUswEIJIbLI610fuqA==}
+    dev: false
 
   /undici@5.28.4:
     resolution: {integrity: sha512-72RFADWFqKmUb2hmmvNODKL3p9hcB6Gt2DOQMis1SEBaV6a4MH8soBvzg+95CYhCKPFedut2JY9bMfrDl9D23g==}
