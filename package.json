@@ -4,7 +4,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0"
   },
   "scripts": {
-    "dev": "eleventy --input=website --serve",
+    "dev": "eleventy --input=website --serve --incremental",
     "build": "eleventy --input=website && jampack ./_site"
   },
   "dependencies": {

@@ -4,6 +4,7 @@
   --link-color: blue;
   --link-visited-color: purple;
   font-family: sans-serif;
+  color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,7 +34,7 @@ nav,
 main,
 aside,
 footer {
-  max-width: 40em;
+  max-width: 65ch;
   margin: 0 auto;
 }
 
@@ -41,6 +42,15 @@ nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30vh;
+}
+
+.e-content {
+  /* make longer text easier to read */
+  font-size: 1.1em;
+  line-height: calc(1ex / 0.32);
+  text-align: left;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
 }
 
 strong {
