@@ -89,3 +89,8 @@ pre {
 a[data-green-link="true"] {
   text-decoration: underline solid 2px green;
 }
+
+a:hover {
+  text-shadow: 0 0 0.5em var(--link-color);
+  transition: text-shadow 0.3s;
+}
