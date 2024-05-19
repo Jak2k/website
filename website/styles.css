@@ -94,3 +94,17 @@ a:hover {
   text-shadow: 0 0 0.5em var(--link-color);
   transition: text-shadow 0.3s;
 }
+
+body[data-rss=""] {
+  width: max-content;
+  margin: auto;
+}
+
+body[data-rss=""] > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  list-style-type: none;
+  padding: 0;
+}

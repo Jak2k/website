@@ -14,23 +14,20 @@
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ metadata.title }}</title>
+    <summary>{{ metadata.subtitle }}</summary>
     <link>{{ metadata.url }}</link>
-    <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
-    <description>{{ metadata.subtitle }}</description>
-    <language>{{ metadata.language }}</language>
+    <id>jak2k.schwanenberg.name</id>
     {%- for post in collections.post | reverse %}
     {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
-    <item>
+    <entry>
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
-      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-      <dc:creator>{{ metadata.author.name }}</dc:creator>
-      <guid>{{ absolutePostUrl }}</guid>
-    </item>
+      <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+      <updated>{{ post.data.lastUpdated | dateToRfc822 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+    </entry>
     {%- endfor %}
-  </channel>
-</rss>
+</feed>

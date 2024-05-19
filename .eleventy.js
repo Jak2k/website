@@ -6,6 +6,7 @@ const greenLinks = require("eleventy-plugin-green-links");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("website/styles.css");
   eleventyConfig.addPassthroughCopy("website/webmentions.js");
+  eleventyConfig.addPassthroughCopy("website/feed.xsl");
   eleventyConfig.addPassthroughCopy("website/ab-quiz.js");
   eleventyConfig.addPassthroughCopy("website/.well-known/**/*");
 
