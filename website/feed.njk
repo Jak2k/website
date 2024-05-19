@@ -24,7 +24,7 @@
     {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
     <entry>
       <title>{{ post.data.title }}</title>
-      <link>{{ absolutePostUrl }}</link>
+      <link href="{{ absolutePostUrl }}" />
       <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
       <updated>{{ post.data.lastUpdated | dateToRfc822 }}</updated>
       <id>{{ absolutePostUrl }}</id>
