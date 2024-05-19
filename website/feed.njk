@@ -25,7 +25,13 @@
     <entry>
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}" />
-      <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+      <content type="html">
+        {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+
+        <p>
+          Thanks for reading from your feed reader! If you have any questions or comments, comment using webmention (more infos on the website). I'd love to hear from you! You may also fix errors or suggest changes in the <a href="https://github.com/jak2k/website">GitHub repo</a>.
+        </p>
+      </content>
       <updated>{{ post.data.lastUpdated | dateToRfc822 }}</updated>
       <id>{{ absolutePostUrl }}</id>
     </entry>
