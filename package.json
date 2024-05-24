@@ -8,7 +8,7 @@
     "build": "eleventy --input=website && jampack ./_site"
   },
   "dependencies": {
-    "@divriots/jampack": "^0.24.0",
+    "@divriots/jampack": "^0.24.4",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "eleventy-plugin-green-links": "^0.1.5",
     "eleventy-plugin-shiki-twoslash": "^1.1.3"
