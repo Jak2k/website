@@ -46,7 +46,6 @@ nav {
 
 .e-content {
   /* make longer text easier to read */
-  font-size: 1.1em;
   line-height: calc(1ex / 0.32);
   text-align: left;
   text-underline-position: under;
@@ -75,15 +74,17 @@ footer {
 }
 
 li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 .comment {
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 pre {
-  padding: 1em;
+  padding: 1rem;
+  overflow-x: hidden;
+  text-wrap: stable;
 }
 
 a[data-green-link="true"] {
@@ -103,7 +104,7 @@ body[data-rss=""] {
 body[data-rss=""] > ul {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1rem;
 
   list-style-type: none;
   padding: 0;
