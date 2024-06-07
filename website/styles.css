@@ -63,6 +63,7 @@ strong {
   position: absolute;
   transform: translateY(-100%);
   transition: transform 0.3s;
+  background-color: var(--background-color);
 }
 
 #skip-to-content:focus {
@@ -83,7 +84,7 @@ li {
 
 pre {
   padding: 1rem;
-  overflow-x: hidden;
+  overflow-x: scroll;
   text-wrap: stable;
 }
 
