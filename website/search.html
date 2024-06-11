@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: Search
+description: Search for content on this website
+---
+
+<main id="content">
+  <h1>Search</h1>
+  <noscript>
+    <p>
+      This website uses JavaScript to provide a local search functionality.
+      Please enable JavaScript to use the search.
+    </p>
+  </noscript>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <style>
+    :root {
+      --pagefind-ui-border-width: 0;
+      --pagefind-ui-primary: #000000;
+      --pagefind-ui-text: #000000;
+      --pagefind-ui-background: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --pagefind-ui-primary: #ffffff;
+        --pagefind-ui-text: #ffffff;
+        --pagefind-ui-background: #000000;
+      }
+    }
+  </style>
+  <div id="search"></div>
+  <script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+      new PagefindUI({ element: "#search", showSubResults: true });
+    });
+  </script>
+</main>
