@@ -5,8 +5,6 @@ featured: true
 lastUpdated: 2024-06-14T13:00:00Z
 ---
 
-# Google - How the web is being destroyed
-
 Google is destroying the web. It started years ago with Google AdSense, and now it is getting worse with AI. Websites are no longer made for people, but for maximizing ad revenue. The web is becoming more and more hostile to humans and may die completely when Google just shows AI-generated answers as search results. We need to act now.
 
 To understand how Google is dangerous to the Web, and how to solve this problem, we need to understand what makes the Web special. Before we had the Web, we had [Gopher](https://en.wikipedia.org/wiki/Gopher_(protocol)). Gopher was hierarchical, like a flash drive full of folders and files, and to navigate around it, you had special files called menus. These menus would list files on your and other people's servers, and each entry was limited to 80 characters. The content would usually be in a simple text file. The developers at CERN found this too restrictive. So they developed the Web. You can still visit [the very first website](https://info.cern.ch/hypertext/WWW/TheProject.html). The Web is fundamentally different from Gopher: each page is written in [HTML](https://en.wikipedia.org/wiki/HTML), a language designed for the Web. Such a file has some information, like a title (the one you see in the tab bar) and a body. Inside the body you can write whatever you want: *emphasized*, **strong**, ~~deleted~~ text, paragraphs, and links. Unlike Gopher, you can place these links inside the text, as I did above. Now, instead of menus and text files, people could write things, organize them however they want, and link to their sources and other interesting pages.
