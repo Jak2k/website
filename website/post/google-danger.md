@@ -28,7 +28,7 @@ We also need to strengthen the Web so that it becomes a decentralized, independe
 
 Of course, you don't *need* to code to have your own website. You could start with a simple [Wordpress](https://wordpress.org/) blog. You can create a WordPress site for free at [Wordpress.com](https://wordpress.com), although I would recommend getting your own domain (like `schwanenberg.name`) to be more independent of Wordpress.com. Not only that, but you can actually host a WordPress website with almost any hosting provider. Maybe choose a local one...
 
-If you are more advanced, like me, you can also opt for [eleventy](https://11ty.dev/). It is a tool that converts simple markdown files (basically a plain text file with a tiny bit of markup: `*cursive*, **bold**, [link](https://example.com)`) into a web page. Eleventy gives you complete control over the output, but that also means you have to learn a tiny bit of HTML & CSS. [MDN](https://developers.mozialla.com/) is a great resource for this.
+If you are more advanced, like me, you can also opt for [eleventy](https://11ty.dev/). It is a tool that converts simple markdown files (basically a plain text file with a tiny bit of markup: `*cursive*, **bold**, [link](https://example.com)`) into a web page. Eleventy gives you complete control over the output, but that also means you have to learn a tiny bit of HTML & CSS. [MDN](https://developers.mozilla.com/) is a great resource for this.
 
 ## Conclusion
 
