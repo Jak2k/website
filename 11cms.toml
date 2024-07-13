@@ -1,0 +1,8 @@
+ssg = "11ty"
+style_path = "/website/styles.css"
+
+[[collections]]
+name = "Posts"
+path = "/website/post"
+types = ["md"]
+template_name = "post.md.tmpl"
