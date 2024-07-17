@@ -51,7 +51,7 @@ const TEMPLATE_WM = (wm) => {
   ${wm.children.map(TEMPLATE_ENTRY).join("")}`;
 };
 
-const el = document.getElementById("webmentions");
+const el = document.getElementById("wm");
 
 // fetch the data from the url
 try {
