@@ -1,34 +1,3 @@
-:root {
-  --text-color: black;
-  --background-color: white;
-  --link-color: blue;
-  --link-visited-color: purple;
-  font-family: sans-serif;
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: white;
-    --background-color: #1f2122;
-    --link-color: lightblue;
-    --link-visited-color: pink;
-  }
-}
-
-body {
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-a {
-  color: var(--link-color);
-}
-
-a:visited {
-  color: var(--link-visited-color);
-}
-
 /* limit content width to a comfortable reading width */
 nav,
 main,
@@ -53,8 +22,9 @@ nav {
 }
 
 strong {
-  text-shadow: 0 0 0.5em white;
+  text-shadow: 0 0 0.5em blue;
 }
+
 
 /* Skip to content (inspired by: https://css-tricks.com/how-to-create-a-skip-to-content-link/) */
 #skip-to-content {
@@ -63,7 +33,7 @@ strong {
   position: absolute;
   transform: translateY(-100%);
   transition: transform 0.3s;
-  background-color: var(--background-color);
+  background-color: Canvas;
 }
 
 #skip-to-content:focus {
@@ -93,7 +63,7 @@ a[data-green-link="true"] {
 }
 
 a:hover {
-  text-shadow: 0 0 0.5em var(--link-color);
+  text-shadow: 0 0 0.5em LinkText;
   transition: text-shadow 0.3s;
 }
 
