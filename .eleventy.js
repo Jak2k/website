@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("website/BingSiteAuth.xml");
   eleventyConfig.addPassthroughCopy("website/google7c5903cf6acc20cf.html");
   eleventyConfig.addPassthroughCopy("website/robots.txt");
+  eleventyConfig.addPassthroughCopy("website/favicon.svg");
 
   eleventyConfig.addCollection("post", function (collection) {
     return collection.getFilteredByGlob("website/post/**/*.md");
