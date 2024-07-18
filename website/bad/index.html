@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A very bad page</title>
+    <meta name="description" content="This is a very bad page" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script src="/webmentions.js" type="module" defer></script>
+    <link
+      rel="webmention"
+      href="https://webmention.io/jak2k.schwanenberg.name/webmention"
+    />
+    <link
+      rel="pingback"
+      href="https://webmention.io/jak2k.schwanenberg.name/xmlrpc"
+    />
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+
+    <!-- Matomo -->
+    <script is:inline>
+      var _paq = (window._paq = window._paq || [])
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["trackPageView"])
+      _paq.push(["trackVisibleContentImpressions"])
+      _paq.push(["enableLinkTracking"])
+      ;(function () {
+        var u = "//a.schwanenberg.name/"
+        _paq.push(["setTrackerUrl", u + "matomo.php"])
+        _paq.push(["setSiteId", "2"])
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0]
+        g.async = true
+        g.src = u + "matomo.js"
+        s.parentNode.insertBefore(g, s)
+      })()
+    </script>
+    <!-- End Matomo -->
+    <script data-goatcounter="https://jak2k.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script>
+      function loadTemplate(id) {
+        const template = document.querySelector(`template[data-temp="${id}"]`);
+        const modal = document.querySelector('#consent .modal');
+        modal.innerHTML = template.innerHTML;
+        // make sure scripts are executed
+        modal.querySelectorAll('script').forEach((script) => {
+          eval(script.innerHTML);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#content" id="skip-to-content">Skip to content</a>
+    <nav>
+      <span>
+        <a href="/">Back to my real site</a>
+      </span>
+      </span>
+    </nav>
+    <main>
+        <h1>A very bad page</h1>
+        <p>
+            Wow, you made it here! Congratulation!
+        </p>
+        <p>
+            I obfuscated the flag below using <a href="https://gchq.github.io/CyberChef/">CyberChef</a>. You need to find the right recipe to decode it. Good luck!
+        </p>
+        <p>
+            <strong>Flag:</strong> <code>H4sIAN2BmWYA/3VR2xEAMQT8V8U1QP/lBSG7ybh8OGP2wZ7500/jI1m9125N/fU4PpI14dUGvSFRDnXPCwOZwjTXVBIZkrfRQYN5qxATq8+buyQf9zrCglm8BRLJJSq0jZ5iYG+kxpLkxMee/udoRPf+mZyAN180KKnZAqd6O0kEAgAA</code>
+        </p>
+    </main>
+    <aside id="consent">
+        <div class="backdrop"></div>
+        <div class="modal">
+            <h2>Cookie consent</h2>
+            <div class="warning">
+                <h3>This is a joke.</h3>
+                <p>
+                    This page is a joke. It is a <strong>parody</strong> of the modern web. It is not meant to be taken seriously, but if you manage to <strong>capure the flag</strong>, you can send me an email (mail is in flag) and I will add you to the hell of fame. Good luck!
+                </p>
+                <p>
+                    You could cheat, but that would be no fun. I trust you to play fair.
+                </p>
+                <a href="/">Back to my real site</a>
+            </div>
+            <p>
+                This site uses cookies to improve your experience. We also share some information with our 475345 partners to improve our services. We already loaded 32 trackers and 12 ads. Do you accept the other 356 trackers and 754 ads?
+            </p>
+            <button id="settings">Settings</button>
+            <button id="accept-all" style="background: green; color: white;">Accept All</button>
+            <script>
+                document.getElementById('accept-all').addEventListener('click', () => {
+                    alert("Seriously? You clicked that button? You know that this is a joke, right? I won't make it that easy for you to see the page.");
+                });
+                document.getElementById('settings').addEventListener('click', () => {
+                    loadTemplate('settings');
+                });
+            </script>
+        </div>
+        <template data-temp="settings">
+            <h2>Cookie settings</h2>
+            <p>
+                You can change your cookie settings here. But you can't disable cookies. We need them to track you. If you want to disable cookies, you can also buy our <strong>premium subscription for 99.99€ per month</strong>. This will disable the advertising cookies. But we will still track you. We need that data to improve our services.
+            </p>
+            <h3>Isn't that illegal?</h3>
+            <p>
+                Yes, but we don't care. We are a big company. We have a lot of lawyers. We will win in court. We have the money. You don't. So shut up and accept our cookies. Muhahahahaha!
+            </p>
+            <h3>Advertising</h3>
+            <p>
+                These are cookies we use to optimize our advertising and show ads, that are as irrelevant to you as possible. We don't care about your privacy. We only care about your money. We want to make you buy things you don't need. We want to make you unhappy. We want to make you addicted to our products. We want to make you a slave of our company. We want to make you a part of our system. We want to make you a part of our darkness.
+            </p>
+            <details>
+                <summary>Advertising cookies</summary>
+                <p>
+                    We use the following advertising cookies with our 475345 partners:
+                </p>
+                <ul>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Google Ads</strong> - We use Google Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Facebook Ads</strong> - We use Facebook Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Trash (officialy X (formerly Twitter)) Ads</strong> - We use Trash (officialy X (formerly Twitter)) Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Amazon Ads</strong> - We use Amazon Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Microsoft Ads</strong> - We use Microsoft Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Apple Ads</strong> - We use Apple Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>TikTok Ads</strong> - We use TikTok Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>LinkedIn Ads</strong> - We use LinkedIn Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Reddit Ads</strong> - We use Reddit Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Instagram Ads</strong> - We use Instagram Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Snapchat Ads</strong> - We use Snapchat Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>YouTube Ads</strong> - We use YouTube Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Spotify Ads</strong> - We use Spotify Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Meta Ads</strong> - We use Netflix Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Yandex Ads</strong> - We use Yandex Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Alibaba Ads</strong> - We use Alibaba Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>ByteDance Ads</strong> - We use ByteDance Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Mail.ru Ads</strong> - We use Mail.ru Ads to show you ads that are as irrelevant to you as possible and earn money with your clicks.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Putin Ads</strong> - We use Putin Ads to find people who are against Putin and send them to Siberia.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Kim Jong-un Ads</strong> - We use Kim Jong-un Ads to find people who are against Kim Jong-un and send them to North Korea.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Xi Jinping Ads</strong> - We use Xi Jinping Ads to find people who are against Xi Jinping and send them to the Uyghur concentration camps.
+                    </li>
+                </ul>
+            </details>
+            <details>
+                <summary>Tracking cookies</summary>
+                <p>
+                    We use the following tracking cookies with our 475345 partners:
+                </p>
+                <ul>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Google Analytics</strong> - We use Google Analytics to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Facebook Pixel</strong> - We use Facebook Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Trash (officialy X (formerly Twitter)) Pixel</strong> - We use Trash (officialy X (formerly Twitter)) Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Amazon Pixel</strong> - We use Amazon Pixel to track your every move on our website and sell this data to the highest bidder. This also install a toolbar in your browser to route your through affiliate links so we can earn money with your purchases.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Microsoft Pixel</strong> - We use Microsoft Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Apple Pixel</strong> - We use Apple Pixel to track your every move on our website and sell this data to the highest bidder. We also install a browser extension to order Apple products in your name, so I can buy my mom an iPhone so I can call her without Tim complaining about the bubble color.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Netflix Pixel</strong> - We use Netflix Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>LinkedIn Pixel</strong> - We use LinkedIn Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Reddit Pixel</strong> - We use Reddit Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Snapchat Pixel</strong> - We use Snapchat Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>YouTube Pixel</strong> - We use YouTube Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Spotify Pixel</strong> - We use Spotify Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Meta Pixel</strong> - We use Meta Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Yandex Pixel</strong> - We use Yandex Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Alibaba Pixel</strong> - We use Alibaba Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>ByteDance Pixel</strong> - We use ByteDance Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>Mail.ru Pixel</strong> - We use Mail.ru Pixel to track your every move on our website and sell this data to the highest bidder.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>NSA</strong> - We will send all your data to the NSA, because they already have it anyway.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>FBI</strong> - We will send all your data to the FBI, because they already have it anyway.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>CIA</strong> - We will send all your data to the CIA, because they already have it anyway.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>MI6</strong> - We will send all your data to the MI6, because they already have it anyway.
+                    </li>
+                    <li>
+                        <input type="checkbox" class="acceptbox" /><strong>FSB</strong> - We will send all your data to the FSB, because they already have it anyway.
+                    </li>
+                    <li>
+                        <input type="checkbox" disabled /><strong>Bundesnachrichtendienst</strong> - We will <em>NOT</em> send any data to the Bundesnachrichtendienst, because they are still using Fax machines.
+                    </li>
+                </ul>
+            </details>
+            <button id="accept">Save</button>
+            <style>
+                .acceptbox {
+                    margin-right: 1rem;
+                }
+            </style>
+            <script>
+                const acceptButton = document.getElementById('accept');
+                acceptButton.addEventListener('click', () => {
+                    // check that all checkboxes are checked
+                    const checkboxes = document.querySelectorAll('.acceptbox');
+                    const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+                    if (!allChecked) {
+                        alert('Please accept all the cookies! You may use the Konami code to speed up the process.');
+                        return;
+                    }
+                    loadTemplate('loading');
+                });
+                // register Konami code
+                let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === konamiCode[0]) {
+                        konamiCode.shift();
+                        if (konamiCode.length === 0) {
+                            // all keys entered
+                            const checkboxes = document.querySelectorAll('.acceptbox');
+                            checkboxes.forEach(checkbox => checkbox.checked = true);
+                        }
+                    } else {
+                        konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+                    }
+                });
+            </script>
+        </template>
+
+        <template data-temp="loading">
+            <h2>Loading JavaScript...</h2>
+            <p>We use JavaScript on our totally static website to enhance your experience. Please wait while we load the JavaScript...</p>
+            <ul>
+                <li>
+                    <strong>React</strong> <progress class="projs" min="0" max="100" value="0" />  - We use React to render our website. This is a totally static website, but we still use React because it's cool and we want to be cool too.
+                </li>
+                <li>
+                    <strong>Vue</strong> <progress class="projs" min="0" max="100" value="0" />  - We use Vue to render our website. This is a totally static website, but we still use Vue because it has a better logo and developer experience than React. Also, Evan is a nice guy.
+                </li>
+                <li>
+                    <strong>Angular</strong> <progress class="projs" min="0" max="100" value="0" />  - We use Angular to render our website. This is a totally static website, but we still use Angular because it's a heavy framework and we want to be slow too.
+                </li>
+                <li>
+                    <strong>Svelte</strong> <progress class="projs" min="0" max="100" value="0" />  - We use Svelte to render our website. This is a totally static website, but we still use Svelte because it's the new cool kid on the block and we want to be cool too.
+                </li>
+                <li>
+                    <strong>Ember</strong> <progress class="projs" min="0" max="100" value="0" />  - We use Ember to render our website. This is a totally static website, but we still use Ember because it's a legacy framework and we want to be legacy too.
+                </li>
+                <li>
+                    <strong>Backbone</strong> <progress class="projs" min="0" max="100" value="0" />  - We use Backbone to render our website. This is a totally static website, but we still use Backbone because it's a dead framework and we want to be dead too.
+                </li>
+            </ul>
+            <p>Yes, you have to wait for all the progress bars to finish loading. We hope you can spend one minute of our time.</p>
+            <p>If this bores you or makes you angry, you can always meditate or do some yoga. Or you can just close the tab and touch some grass!</p>
+            <p>Thank you for your patience!</p>
+            <button id="continueAfterLoading">Continue</button>
+            <script>
+                async function loadBar(bar) {
+                    setInterval(() => {
+                        bar.value += 1;
+                        if (bar.value === 100) {
+                            bar.outerHTML = '<strong>Done!</strong>';
+                        }
+                    }, 100);
+                };
+
+                const progressBars = document.querySelectorAll('.projs');
+                progressBars.forEach((bar, index) => {
+                    setTimeout(() => {
+                        loadBar(bar);
+                    }, index * 10000);
+                });
+
+                const continueButton = document.getElementById('continueAfterLoading');
+                continueButton.addEventListener('click', () => {
+                    let probars = document.querySelectorAll('.projs');
+                    if (probars.length === 0) {
+                        loadTemplate('quiz');
+                    } else {
+                        alert('Please wait for all the progress bars to finish loading! Ohmmmm...');
+                    }
+                });
+            </script>
+        </template>
+
+        <template data-temp="quiz">
+            <h2>Quiz Time!</h2>
+            <p>We only want intelligent people to use our website. Please answer the following questions to prove that you are smart enough to use our website.</p>
+            <p>If you fail the quiz, you will either be redirected to a Rick Roll video or you will be redirected to a website that fits your intelligence level.</p>
+            <p>Good luck!</p>
+
+            <uL>
+                <li>
+                    <strong>Who founded the company, that makes the best operating system in the world?</strong>
+                    <div class="options">
+                        <button class="wrong">Steve Jobs</button>
+                        <button class="correct">Bill Gates</button>
+                        <button class="wrong">❤️Linus Torvalds❤️</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>What is the best programming language in the world?</strong>
+                    <div class="options">
+                        <button class="correct">Java</button>
+                        <button class="wrong">Rust</button>
+                        <button class="wrong">TypeScript</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>What is the best text editor in the world?</strong>
+                    <div class="options">
+                        <button class="wrong">Zed</button>
+                        <button class="wrong">VS Code</button>
+                        <button class="correct">Windows WordPad</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>What is the who is the first American president?</strong>
+                    <div class="options">
+                        <button class="wrong">George Washington</button>
+                        <button class="correct">Elon Musk</button>
+                        <button class="wrong">Abraham Lincoln</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>What is the best social network?</strong>
+                    <div class="options">
+                        <button class="wrong">Mastodon</button>
+                        <button class="wrong">Pixelfed</button>
+                        <button class="correct">Facebook</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>What is the best search engine?</strong>
+                    <div class="options">
+                        <button class="correct">Windows Explorer Search</button>
+                        <button class="wrong">Startpage</button>
+                        <button class="wrong">Mojeek</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>What is the best browser?</strong>
+                    <div class="options">
+                        <button class="wrong">Firefox</button>
+                        <button class="wrong">Floorp</button>
+                        <button class="correct">Internet Explorer</button>
+                    </div>
+                </li>
+            </ul>
+            <button id="submitQuiz">Continue</button>
+            <script>
+                let failWebsits = [
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                    'https://www.google.com/search?q=how+to+use+a+computer',
+                    'https://www.google.com/search?q=how+to+use+the+internet',
+                    'https://www.google.com/search?q=how+to+use+a+web+browser',
+                    'https://www.google.com/search?q=how+to+turn+on+a+computer',
+                    'https://www.google.com/search?q=how+to+live',
+                    'https://www.google.com/search?q=how+to+be+smart',
+                    'https://www.google.com/search?q=how+to+be+intelligent',
+                    'https://www.google.com/search?q=how+to+be+breath',
+                    'https://www.google.com/search?q=how+to+be+alive',
+                    'https://www.google.com/search?q=how+to+be+human',
+                    'https://donaldjtrump.com/',
+                    'https://gop.com/',
+                    'https://www.foxnews.com/',
+                    'https://www.breitbart.com/',
+                    'https://www.infowars.com/',
+                ];
+                const correctButton = document.querySelector('.correct');
+                correctButton.addEventListener('click', (e) => {
+                    e.target.style.backgroundColor = 'green';
+                });
+
+                const wrongButtons = document.querySelectorAll('.wrong');
+                wrongButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.target.style.backgroundColor = 'red';
+                        const randomWebsite = failWebsits[Math.floor(Math.random() * failWebsits.length)];
+                        window.open(randomWebsite, '_blank');
+                    });
+                });
+
+                const submitQuizButton = document.getElementById('submitQuiz');
+                submitQuizButton.addEventListener('click', () => {
+                    const correctAnswers = document.querySelectorAll('.correct');
+                    // Check if all correct answers are green
+                    if (Array.from(correctAnswers).every(button => button.style.backgroundColor === 'green')) {
+                        loadTemplate('tos');
+                    } else {
+                        alert("Please finish the quiz first!");
+                    }
+                });
+            </script>
+            <style>
+                .options {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+            </style>
+        </template>
+
+        <template data-temp="tos">
+            <h2>Terms of Service</h2>
+            <p>Please read the following terms of service carefully. To confirm that you have read and agree to the terms of service, please click on the last appearance of the word "tomato" in the text below.</p>
+            <hr>
+            <p>By utilizing this service, you hereby irrevocably and unconditionally agree to sell your firstborn's soul to the devil, transferring all rights, titles, and interests in said soul to the infernal entity for all eternity. In the event that you do not have a firstborn child, the soul of your closest living relative, as determined by a complex algorithm and subject to our sole discretion, will be substituted in their place. This covenant is binding and shall not be subject to renegotiation or revocation under any circumstances.</p>
+
+            <p>Furthermore, you explicitly consent to a mandatory and immediate update to Windows 12. This compulsory update will occur at a time of our choosing, without any prior notice, and regardless of any existing operating system, hardware compatibility issues, or personal preferences you may have. Resistance to this update is utterly futile, and any attempts to circumvent or delay the process will result in severe penalties, including but not limited to the permanent disablement of your device.</p>
+
+            <p>The use of the word "tomato" in any form of communication, documentation, or content related to this service will result in the immediate and irrevocable forfeiture of all rights, privileges, and benefits associated with your account. This prohibition extends to all derivatives, synonyms, and any attempts to obscure or alter the word in any manner. Violators will be subject to the full extent of our punitive measures, which may include account suspension, financial penalties, and public shaming.</p>
+
+
+            <p>Additionally, by agreeing to these terms, you unreservedly accept that your home address will be doxxed on Twitter at a time and frequency determined solely by us. You hereby relinquish any and all claims to privacy, acknowledging that this action is irreversible, final, and beyond any form of redress or appeal. The dissemination of your address will be carried out in a manner designed to maximize visibility and impact.</p>
+
+            <p>Moreover, you agree to participate in our annual "Tomato Festival," a week-long event during which you are required to wear a tomato costume, consume exclusively tomato-based products, and promote the event on all your social media platforms. Failure to comply will result in severe repercussions, including but not limited to social media account bans, public humiliation, and financial penalties.</p>
+
+            <p>In addition to the aforementioned terms, you consent to receiving a weekly newsletter containing entirely false and misleading information. This newsletter will be designed to confuse, amuse, and occasionally infuriate you. By accepting these terms, you waive any right to seek clarification, correction, or compensation for any distress caused by the content of these newsletters.</p>
+
+            <p>You also agree to participate in periodic surveys, which may include highly personal and intrusive questions. These surveys will be used for our amusement and may be published publicly without any form of anonymization. By participating, you relinquish all rights to privacy and agree to the public dissemination of your responses.</p>
+
+            <p>Furthermore, you agree to allow us to place a hidden camera in your home, ostensibly for "security purposes." This camera will be monitored by our team of bored interns, who will use the footage to create entertaining highlight reels for our internal amusement. By accepting these terms, you waive any and all rights to privacy within your own home.</p>
+
+            <p>Finally, you consent to a random, unannounced visit from our "Customer Appreciation Squad," a team of eccentric individuals who will arrive at your home at any time of day or night to perform spontaneous acts of "appreciation." These acts may include, but are not limited to, impromptu musical performances, interpretive <span id="tomato">tomato</span>-dance routines, and dramatic readings of your private correspondence. Refusal to participate will result in the immediate termination of your account and all associated privileges.</p>
+
+            <script>
+                const tomato = document.getElementById('tomato');
+                tomato.addEventListener('click', () => {
+                    loadTemplate('success');
+                });
+            </script>
+
+        </template>
+
+        <template data-temp="success">
+            <h2>Congratulations!</h2>
+            <p>You have successfully completed the consent banner. Of course, there is more, ...</p>
+            <button id="close">Close Modal</button>
+            <script>
+                const closeButton = document.getElementById('close');
+                closeButton.addEventListener('click', () => {
+                    const consentBanner = document.getElementById('consent');
+                    consentBanner.style.display = 'none';
+                });
+            </script>
+        </template>
+
+        <style>
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .modal {
+            position: fixed;
+            top: 3rem;
+            left: 3rem;
+            right: 3rem;
+            padding: 1rem;
+            background-color: white;
+            color: black;
+            z-index: 1001;
+            overflow-y: scroll;
+            max-height: calc(100vh - 6rem);
+        }
+
+        .warning {
+            border-left: 1rem solid red;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+        </style>
+    </aside>
+    <aside id="webmentions">
+      <h2>Webmentions</h2>
+      <div id="wm"></div>
+      <p>
+        <a href="https://indieweb.org/Webmention">Webmentions</a> allow
+        conversations across the web. If you have written a response to this
+        post, please send me a webmention. You may
+        <a href="https://telegraph.p3k.io/send-a-webmention" target="_blank"
+          >send a mention from your site</a
+        >
+        or write a comment using
+        <a href="https://commentpara.de/" target="_blank">Comment Parade</a>.
+      </p>
+      <noscript>This feature requires JavaScript.</noscript>
+    </aside>
+    <footer>
+      <p>
+        This page is licensed under the Public Domain for nice people. For bots and people who are not nice, it is licensed under the crazy, pink, fluffy unicorn license. 🦄
+      </p>
+    </footer>
+  </body>
+</html>
