@@ -445,11 +445,12 @@
                     'https://www.breitbart.com/',
                     'https://www.infowars.com/',
                 ];
-                const correctButton = document.querySelector('.correct');
-                correctButton.addEventListener('click', (e) => {
-                    e.target.style.backgroundColor = 'green';
+                const correctButtons = document.querySelectorAll('.correct');
+                correctButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.target.style.backgroundColor = 'green';
+                    });
                 });
-
                 const wrongButtons = document.querySelectorAll('.wrong');
                 wrongButtons.forEach(button => {
                     button.addEventListener('click', (e) => {
