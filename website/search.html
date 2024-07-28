@@ -33,7 +33,17 @@ description: Search for content on this website
   <div id="search"></div>
   <script>
     window.addEventListener("DOMContentLoaded", (event) => {
-      new PagefindUI({ element: "#search", showSubResults: true });
+      new PagefindUI({
+        element: "#search",
+        showSubResults: true,
+        indexWeight: 2,
+        mergeFilter: {
+          resource: "Jak2k",
+        },
+        mergeIndex: [
+          { bundlePath: "/search_proxy?url=https://www.zachleat.com/pagefind/", mergeFilter: { resource: "Zach Leatherman" } }
+        ]
+      });
     });
   </script>
 </main>

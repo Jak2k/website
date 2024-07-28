@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/search_proxy/(.*)",
+      "dest": "/api/search_proxy?url=https://$1"
+    }
+  ]
+}
