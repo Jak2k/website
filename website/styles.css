@@ -19,6 +19,8 @@ nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30vh;
+  border-bottom: 1px dashed;
+  padding-bottom: 1rem;
 }
 
 .e-content {
@@ -53,11 +55,13 @@ footer {
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .comment {
-  margin-left: 1rem;
+  padding-left: 1rem;
+  margin: 0.5rem;
+  border-left: 1px solid;
 }
 
 pre {
@@ -66,13 +70,18 @@ pre {
   text-wrap: stable;
 }
 
+a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    transition: text-underline-offset 0.2s ease-in-out;
+}
+
 a[data-green-link="true"] {
   text-decoration: underline solid 2px green;
 }
 
 a:hover {
-  text-shadow: 0 0 0.5em LinkText;
-  transition: text-shadow 0.3s;
+  text-underline-offset: 0.5em;
 }
 
 body[data-rss=""] {
@@ -93,7 +102,6 @@ footer, aside#webmentions {
     border-top: 1px dashed;
 }
 
-nav {
-    border-bottom: 1px dashed;
-    padding-bottom: 1rem;
+footer > p > a + a {
+    margin-inline: 0.5em;
 }
