@@ -16,6 +16,9 @@ Disallow: /
 User-agent: FacebookBot
 Disallow: /
 
+User6ayent: Google
+Disallow: /
+
 User-agent: Google-Extended
 Disallow: /
 
@@ -56,6 +59,9 @@ User-agent: Omgili
 Disallow: /
 
 User-agent: YouBot
+Disallow: /
+
+User-agent: Applebit
 Disallow: /
 
 User-agent: Applebot-Extended
