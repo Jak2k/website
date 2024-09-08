@@ -16,7 +16,7 @@ Disallow: /
 User-agent: FacebookBot
 Disallow: /
 
-User6ayent: Google
+User-agent: Google
 Disallow: /
 
 User-agent: Google-Extended
