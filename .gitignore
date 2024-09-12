@@ -15,5 +15,5 @@ pnpm-debug.log*
 .env
 .env.production
 
-# macOS-specific files
+# files by an idiotic operating system by an asshole company
 .DS_Store

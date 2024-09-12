@@ -9,10 +9,10 @@ footer,
 }
 
 #ms {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    color: red;
-    border: 1px dashed red;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  color: red;
+  border: 1px dashed red;
 }
 
 nav {
@@ -30,11 +30,6 @@ nav {
   text-underline-position: under;
   text-decoration-thickness: 2px;
 }
-
-strong {
-  text-shadow: 0 0 0.5em blue;
-}
-
 
 /* Skip to content (inspired by: https://css-tricks.com/how-to-create-a-skip-to-content-link/) */
 #skip-to-content {
@@ -71,9 +66,9 @@ pre {
 }
 
 a {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-    transition: text-underline-offset 0.2s ease-in-out;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: text-underline-offset 0.2s ease-in-out;
 }
 
 a[data-green-link="true"] {
@@ -98,10 +93,11 @@ body[data-rss=""] > ul {
   padding: 0;
 }
 
-footer, aside#webmentions {
-    border-top: 1px dashed;
+footer,
+aside#webmentions {
+  border-top: 1px dashed;
 }
 
 footer > p > a + a {
-    margin-inline: 0.5em;
+  margin-inline: 0.5em;
 }

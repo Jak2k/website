@@ -34,16 +34,18 @@ const TEMPLATE_ENTRY = (entry) => {
   return `<div class="comment">
       ${entry.author ? TEMPLATE_AUTHOR(entry.author) : ""}
     <p>${escapedText || "No text"}</p>
-    <p><a href="${entry.url}">${type}</a> received on ${new Date(entry["wm-received"]).toLocaleString()}</p>
+    <p><a href="${entry.url}">${type}</a> received on ${new Date(
+    entry["wm-received"]
+  ).toLocaleString()}</p>
   </div> `;
 };
 
 const TEMPLATE_WM = (wm) => {
   const likeCount = wm.children.filter(
-    (c) => c["wm-property"] === "like-of",
+    (c) => c["wm-property"] === "like-of"
   ).length;
   const repostCount = wm.children.filter(
-    (c) => c["wm-property"] === "repost-of",
+    (c) => c["wm-property"] === "repost-of"
   ).length;
 
   return `

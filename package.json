@@ -9,7 +9,7 @@
     "pagefind": "pnpm dlx pagefind --site _site"
   },
   "dependencies": {
-    "@divriots/jampack": "^0.24.4",
+    "@divriots/jampack": "0.27.1",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "eleventy-plugin-green-links": "^0.1.5",
     "eleventy-plugin-shiki-twoslash": "^1.1.3"
