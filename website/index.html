@@ -5,27 +5,30 @@ description: Jak2k's personal website & blog
 ---
 
 <main id="content">
-  <h1>Jak2k</h1>
-  <p class="h-card">
-    Hi, I'm <a
-      itemprop="name"
-      class="p-name u-url"
-      href="https://jak2k.schwanenberg.name/"
-      rel="me">Jakob</a
-    >, a <span itemprop="jobTitle">frontend developer</span> who loves the <strong>IndieWeb</strong>. I code with <strong>Rust, TypeScript, Vue, Astro &amp; NuxtJS</strong>.
-    I'm from <span class="p-country-name">Germany</span> and currently a <strong
-      >student</strong>.
+  <div class="h-card">
+    <h1><img src="/favicon.svg" class="u-photo u-logo" alt="Jak2k's Logo"
+        style="height: 1.1em; width: 1.1em; display: inline; transform: translateY(0.2em); margin-right: 0.25em;"
+        class="u-photo u-logo" />Jak2k
+    </h1>
+    <p>
+      Hi, I'm <a itemprop="name" class="p-name p-given-name u-url u-uid" href="https://jak2k.schwanenberg.name/"
+        rel="me">Jakob</a>, a <span class="p-job-title">frontend developer</span> who loves the
+      <strong>IndieWeb</strong>.
+      I code with <strong>Rust,
+        TypeScript, Vue, Astro &amp; NuxtJS</strong>.
+      I'm from <span class="p-country-name">Germany</span> and currently a <strong>student</strong>.
       I use <strong>Fedora Linux</strong> as my main operating system.
-  </p>
+    </p>
+  </div>
 
   <h2>Featured Posts</h2>
   <ul>
     {% for post in collections.post | reverse %}
-      {% if post.data.featured %}
-        <li>
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </li>
-      {% endif %}
+    {% if post.data.featured %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </li>
+    {% endif %}
     {% endfor %}
   </ul>
 </main>

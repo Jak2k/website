@@ -99,5 +99,5 @@ aside#webmentions {
 }
 
 footer > p > a + a {
-  margin-inline: 0.5em;
+  margin: 0.5em;
 }

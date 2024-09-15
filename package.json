@@ -4,7 +4,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0"
   },
   "scripts": {
-    "dev": "eleventy --input=website --serve --incremental",
+    "dev": "eleventy --input=website --serve",
     "build": "eleventy --input=website && jampack ./_site && pnpm run pagefind",
     "pagefind": "pnpm dlx pagefind --site _site"
   },
