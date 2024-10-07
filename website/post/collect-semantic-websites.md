@@ -49,4 +49,4 @@ Please send me websites, which are semantically marked up (IndieWeb sites, Smolw
 - Let people disable styles, while getting a functional & uniform look
 - And more...
 
-Please submit your website using a Webmention comment or on Mastodon.
+Please submit your website using a Webmention comment or [on Mastodon](https://mastodontech.de/@jak2k/113267076665965578).
